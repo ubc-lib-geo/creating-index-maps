@@ -8,7 +8,12 @@ parent: Workflows
 
 If a digital index map exists for a map series, and UBC Library has an inventory of their holdings on a spreadsheet, then we can connect the two using GIS. However we'll first need to make sure that the inventory spreadsheet is properly formatted.
 
-## 1 - Identify fields in the inventory
+## Identify OpenIndexMap fields in the UBC inventory
+
+The basic steps to complete this part:
+1. Review each column and highlight ones that apply to an OIM elements.
+2. Remove columns that are not highlighted.
+{: .note}
 
 First we'll need to make sure that any information contained in the inventories can be cross-walked to the OpenIndexMap (OIM) format standard. Since each UBC inventory spreadsheet is unique, to do this we will need to manually inspect each one and look for applicable column headers which match OIM elements:
 
@@ -21,7 +26,7 @@ First we'll need to make sure that any information contained in the inventories 
 | <b>datePhoto</b> | Date the map sheet was photocorrected | 1990    |
 | <b>dateReprint</b> | Date the map sheet was reprinted | 1978    |
 | <b>date</b> | Use when no other date field is relevant | 1922-08-23    |
-| <b>location</b> | Geographic place name identifying the area covered by the map sheet. <b>Separate with pipe character</b>. | 092G    |
+| <b>location</b> | Geographic place name identifying the area covered by the map sheet. <b>Separate with pipe character</b>. | British Columbia   |
 | <b>scale</b> | Scale statement (representative fraction and qualifiers) of the individual sheet | approximately 1:12000    |
 | <b>title</b> | Title of the map sheet <b>Mandatory if available</b>.| Riviere Embarrassee    |
 | <b>titleAlt</b> | Alternate title, previous title, or subsequent title | Beaver Pond    |
@@ -45,15 +50,14 @@ First we'll need to make sure that any information contained in the inventories 
 | <b>iiifUrl</b> | iiif Manifest URL | https://iiif.library.ubc.ca/presentation/cdm.ifcsm.1-0387689/manifest    |
 | <b>notes</b> | Free text for comments and other information | In poor physical condition    |
 
-For example, the UBC inventory for this Canadian topographic map series has several columns that match OIM elements. The screenshot below shows a selection of inventory column headers, with associated OIM elements in red.
+As columns in the UBC inventories are identified, highlight them or make a note. We will delete the unused columns at the end. For example, the UBC inventory for this Canadian topographic map series has several columns that match OIM elements. The screenshot below shows a selection of inventory column headers, with associated OIM elements in red.
 
 ![250k example inventory with OIM elements](example250k.png "250k example inventory with OIM elements")
 
-Keep in mind that as the inventory columns are compared to OIM elements, there may be inconsistencies that would prevent a straightforward crosswalk. Using the example above, an OIM <b>location</b> element could be applied to both the
+Keep in mind that as the inventory columns are compared to OIM elements, there may be inconsistencies that would prevent a straightforward crosswalk. Using the example above, an OIM <b>location</b> element could be applied to both the "prov" and "Other place" columns. For now, this isn't anything to be concerned about – simply identify columns that can be coverted into an OIM element. In later steps in the process, we will clean up the field names and data, including concatenating two columns if needed.
 
 
 
-Once a field matching those above has been identified, rename the column header to match the element name.
 
 ## 3 - Remove unused fields from UBC inventory
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Spatial indexes at UBC Library
+title: Index maps UBC Library
 nav_order: 2
 ---
 

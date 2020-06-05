@@ -1,8 +1,8 @@
 ---
 layout: default
-title: What Are Index Maps?
+title: What are index maps?
 nav_order: 1
-parent: Creating Index Maps
+parent: Creating index maps
 ---
 
 # Short history

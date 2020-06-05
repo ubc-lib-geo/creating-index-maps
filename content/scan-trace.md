@@ -2,7 +2,7 @@
 layout: default
 title: Scan and trace a paper index
 nav_order: 4
-parent: Workflows for index maps
+parent: Workflows
 ---
 
 Electronic Index: No

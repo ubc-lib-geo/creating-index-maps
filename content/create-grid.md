@@ -2,7 +2,7 @@
 layout: default
 title: Create a grid
 nav_order: 5
-parent: Workflows for index maps
+parent: Workflows
 ---
 This can be done to create blank rectilinear grids. If the grid is not rectilinear:
 

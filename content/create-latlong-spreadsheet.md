@@ -2,7 +2,7 @@
 layout: default
 title: Create lat/long spreadsheet
 nav_order: 6
-parent: Workflows for index maps
+parent: Workflows
 ---
 
 This can be done to create blank rectilinear grids. If the grid is not rectilinear:

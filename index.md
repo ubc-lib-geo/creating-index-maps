@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Creating Index Maps
+title: Creating index maps
 nav_order: 1
 has_children: yes
+has_toc: false
 ---

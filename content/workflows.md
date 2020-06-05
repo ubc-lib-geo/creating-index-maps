@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Workflows for index maps
+title: Workflows
 nav_order: 3
 has_children: yes
 ---

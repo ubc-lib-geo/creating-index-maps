@@ -83,9 +83,10 @@ The window above is showing all values listed in the column, with the number of 
 - For the term that you would like to mass edit, hover the value and select <b>edit</b>, then type the term that should replace it and click <b>Apply</b>. In this example I would like any occurrence of the value "k2 sup." to be "true", since this column will eventually become my OIM "location" element. I will also change "(blank)" to the value "false", since this means that the item is not physically available.
 ![UBC has, after](ubc-has-after.png "UBC has, after")
 
-Mass editing a column may also reveal inevitable occurrences of human error when manually creating spreadsheets. For instance a column with values meant to represent scale:
-![Human error](human-error.png "Human error")
-It's recommended to fix columns to correct any major instances of human error *with reasonable effort*. This column can be cleaned to fix human error and align with OIM standards:
+Mass editing a column may also reveal inevitable occurrences of human error when manually creating spreadsheets. For instance a column with values meant to represent the map scale:
+![Human error](human-error.png "Human error")   
+
+It's recommended to fix columns to correct any major instances of human error *with reasonable effort*. This column can be cleaned to fix human error and align with OIM standards:   
 ![No human error](no-human-error.png "No human error")
 
 ### Replace a term or value

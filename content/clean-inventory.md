@@ -10,6 +10,7 @@ If a digital index map exists for a map series, and UBC Library has an inventory
 
 ## 1 - Identify fields in the inventory
 
+First we'll need to make sure that any information contained in the inventories can be cross-walked to the OpenIndexMap (OIM) format standard. Since each UBC inventory spreadsheet is unique, to do this we will need to manually inspect each one and look for applicable column headers which match OIM elements:
 
 | Element      | Description                                      | Example |
 |--------------|--------------------------------------------------|---------|
@@ -43,6 +44,14 @@ If a digital index map exists for a map series, and UBC Library has an inventory
 | <b>websiteUrl</b> | Link to a website with metadata or other information | https://open.library.ubc.ca/collections/ifcsm    |
 | <b>iiifUrl</b> | iiif Manifest URL | https://iiif.library.ubc.ca/presentation/cdm.ifcsm.1-0387689/manifest    |
 | <b>notes</b> | Free text for comments and other information | In poor physical condition    |
+
+For example, the UBC inventory for this Canadian topographic map series has several columns that match OIM elements. The screenshot below shows a selection of inventory column headers, with associated OIM elements in red.
+
+![250k example inventory with OIM elements](example250k.png "250k example inventory with OIM elements")
+
+Keep in mind that as the inventory columns are compared to OIM elements, there may be inconsistencies that would prevent a straightforward crosswalk. Using the example above, an OIM <b>location</b> element could be applied to both the
+
+
 
 Once a field matching those above has been identified, rename the column header to match the element name.
 

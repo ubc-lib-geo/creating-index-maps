@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Scan and trace
-nav_order:
+title: Scan and trace a paper index
+nav_order: 4
+parent: Workflows for index maps
 ---
 
 Electronic Index: No

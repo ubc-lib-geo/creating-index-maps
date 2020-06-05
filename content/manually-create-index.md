@@ -1,9 +1,10 @@
 ---
 layout: default
-title: Create a grid
-nav_order: 5
+title: Manually create an index
+nav_order: 7
 parent: Workflows for index maps
 ---
+
 This can be done to create blank rectilinear grids. If the grid is not rectilinear:
 
 - if it has a paper map index: [scan and trace](#)

@@ -1,9 +1,10 @@
 ---
 layout: default
-title: Create a grid
-nav_order: 5
+title: Create lat/long spreadsheet
+nav_order: 6
 parent: Workflows for index maps
 ---
+
 This can be done to create blank rectilinear grids. If the grid is not rectilinear:
 
 - if it has a paper map index: [scan and trace](#)

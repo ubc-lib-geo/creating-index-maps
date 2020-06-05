@@ -8,11 +8,13 @@ parent: Workflows
 
 If a digital index map exists for a map series, and UBC Library has an inventory of their holdings on a spreadsheet, then we can connect the two using GIS. However we'll first need to make sure that the inventory spreadsheet is properly formatted.
 
-## Identify OpenIndexMap fields in the UBC inventory
+## Identify OpenIndexMap fields in a UBC inventory
 
 The basic steps to complete this part:
 1. Review each column and highlight ones that apply to an OIM elements.
 2. Remove columns that are not highlighted.
+
+This part requires a spreadsheet application like Microsoft Excel or MacOS Numbers.
 {: .note}
 
 First we'll need to make sure that any information contained in the inventories can be cross-walked to the OpenIndexMap (OIM) format standard. Since each UBC inventory spreadsheet is unique, to do this we will need to manually inspect each one and look for applicable column headers which match OIM elements:

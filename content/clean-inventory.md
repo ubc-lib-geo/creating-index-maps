@@ -11,8 +11,6 @@ If a digital index map exists for a map series, and UBC Library has an inventory
 ## 1 - Identify fields in the inventory
 
 
-
-
 | Element      | Description                                      | Example |
 |--------------|--------------------------------------------------|---------|
 | <b>label</b> | Alphanumeric code identifying the sheet. <b>Mandatory if applicable</b>.| 092G    |
@@ -22,7 +20,7 @@ If a digital index map exists for a map series, and UBC Library has an inventory
 | <b>datePhoto</b> | Date the map sheet was photocorrected | 1990    |
 | <b>dateReprint</b> | Date the map sheet was reprinted | 1978    |
 | <b>date</b> | Use when no other date field is relevant | 1922-08-23    |
-| <b>location</b> | Geographic place name identifying the area covered by the map sheet. <b>Separate with "|"</b>. | 092G    |
+| <b>location</b> | Geographic place name identifying the area covered by the map sheet. <b>Separate with pipe character</b>. | 092G    |
 | <b>scale</b> | Scale statement (representative fraction and qualifiers) of the individual sheet | approximately 1:12000    |
 | <b>title</b> | Title of the map sheet <b>Mandatory if available</b>.| Riviere Embarrassee    |
 | <b>titleAlt</b> | Alternate title, previous title, or subsequent title | Beaver Pond    |

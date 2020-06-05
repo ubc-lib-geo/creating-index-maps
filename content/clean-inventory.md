@@ -73,8 +73,19 @@ These instructions are for using [OpenRefine](https://openrefine.org/) to transf
 
 Working toward having an OIM standardized inventory, the next step will transform the UBC inventory columns and values using functions in OpenRefine. Here are some common OpenRefine functions that will be useful for cleaning up inventories:
 
+### Mass edit a column
+<b>Use this if you need to change a common value of a cell from one thing to another, for instance if you would like to change "Koerner Library" to "true"</b>.
+- Click on a column and select Facet > Text facet. On the left you should see:
+![UBC has, before](ubc-has-before.png "UBC has, before")
+
+The window above is showing all values listed in the column, with the number of occurrences of that value in gray. In this case there are 32 occurrences of values that are nothing but whitespace. Delete any whitespace by hovering over the value and selecting <b>edit</b>. Now delete the whitespace and click <b>Apply</b>. This shoudl remove the 32 occurrences of whitespace.
+
+- For the term that you would like to mass edit, hover the value and select <b>edit</b>, then type the term that should replace it and click <b>Apply</b>. In this example I would like any occurrence of the value "k2 sup." to be "true", since this column will eventually become my OIM "location" element. I will also change "(blank)" to the value "false", since this means that the item is not physically available.
+![UBC has, after](ubc-has-after.png "UBC has, after")
+
+
 ### Replace a term or value
-<b>Use this is you would like to change all of the occurrences of a term into something else, like changing "BC" to "British Columbia" in an entire column.</b>
+<b>Use this is you would like to change all of the occurrences of a term into something else, like changing "BC" to "British Columbia" in an entire column with many other values.</b>
 - Click on a column with values that need to be replaced, then select Edit cells > Transform.
 - In the new window's "Expression" box, the expression should read <b>value.replace('[term]','[replacement]')</b>. For example, if you would like to replace "NL" with "Newfoundland and Labrador", this would be the expression:
 ```
@@ -106,6 +117,7 @@ This expression will turn a column with only the values of UTM zones into one wi
 
 This should be done to all columns, but at a minimum, for columns representing OIM elements 'label'
 - Click on a column with values that need to be replaced, then select Edit cells > Common transforms > Trim leading and trailing whitespace.
+
 
 
 

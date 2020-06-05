@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Spatial indexes at UBC Library
-nav_order: 3
+nav_order: 2
 ---
 
 We have a couple of map indexes in GitHub, 1 for digital collection, one for physical. However, we have MANY paper map indexes for series in our collection.

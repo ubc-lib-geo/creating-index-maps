@@ -68,7 +68,7 @@ The basic steps to complete this part:
 2. Use common OpenRefine functions to transform and clean your columns.
 3. Export as a .csv.
 
-These instructions are for using [OpenRefine](https://openrefine.org/) to transform and clean your inventory.
+This part requires [OpenRefine](https://openrefine.org/) to transform and clean your inventory.
 {: .note}
 
 Working toward having an OIM standardized inventory, the next step will transform the UBC inventory columns and values using functions in OpenRefine. Here are some common OpenRefine functions that will be useful for cleaning up inventories:
@@ -83,9 +83,13 @@ The window above is showing all values listed in the column, with the number of 
 - For the term that you would like to mass edit, hover the value and select <b>edit</b>, then type the term that should replace it and click <b>Apply</b>. In this example I would like any occurrence of the value "k2 sup." to be "true", since this column will eventually become my OIM "location" element. I will also change "(blank)" to the value "false", since this means that the item is not physically available.
 ![UBC has, after](ubc-has-after.png "UBC has, after")
 
+Mass editing a column may also reveal inevitable occurrences of human error when manually creating spreadsheets. For instance a column with values meant to represent scale:
+![Human error](human-error.png "Human error")
+It's recommended to fix columns to correct any major instances of human error *with reasonable effort*. This column can be cleaned to fix human error and align with OIM standards:
+![No human error](no-human-error.png "No human error")
 
 ### Replace a term or value
-<b>Use this is you would like to change all of the occurrences of a term into something else, like changing "BC" to "British Columbia" in an entire column with many other values.</b>
+<b>Use this is you would like to change all of the occurrences of a term into something else, like changing "BC" to "British Columbia" in an entire column with other values. This is different than mass editing cell values, because this will edit a specific term within a cell, and not the entire cell value.</b>
 - Click on a column with values that need to be replaced, then select Edit cells > Transform.
 - In the new window's "Expression" box, the expression should read <b>value.replace('[term]','[replacement]')</b>. For example, if you would like to replace "NL" with "Newfoundland and Labrador", this would be the expression:
 ```
@@ -118,7 +122,12 @@ This expression will turn a column with only the values of UTM zones into one wi
 This should be done to all columns, but at a minimum, for columns representing OIM elements 'label'
 - Click on a column with values that need to be replaced, then select Edit cells > Common transforms > Trim leading and trailing whitespace.
 
+## Rename columns representing OIM elements in OpenRefine
 
+This part requires [OpenRefine](https://openrefine.org/) to rename columns.
+{: .note}
+
+Once columns are cleaned, they are ready to be renamed as OIM elements. If there are any columns that are not ready for an OIM name, continue transforming in OpenRefine.
 
 
 

@@ -74,23 +74,26 @@ This part requires [OpenRefine](https://openrefine.org/) to transform and clean 
 Working toward having an OIM standardized inventory, the next step will transform the UBC inventory columns and values using functions in OpenRefine. Here are some common OpenRefine functions that will be useful for cleaning up inventories:
 
 ### Mass edit a column
-<b>Use this if you need to change a common value of a cell from one thing to another, for instance if you would like to change "Koerner Library" to "true"</b>.
+Use this if you need to change a common value of a cell from one thing to another, for instance if you would like to change "Koerner Library" to "true".
 - Click on a column and select Facet > Text facet. On the left you should see:
+
 ![UBC has, before](ubc-has-before.png "UBC has, before")
 
 The window above is showing all values listed in the column, with the number of occurrences of that value in gray. In this case there are 32 occurrences of values that are nothing but whitespace. Delete any whitespace by hovering over the value and selecting <b>edit</b>. Now delete the whitespace and click <b>Apply</b>. This shoudl remove the 32 occurrences of whitespace.
 
 - For the term that you would like to mass edit, hover the value and select <b>edit</b>, then type the term that should replace it and click <b>Apply</b>. In this example I would like any occurrence of the value "k2 sup." to be "true", since this column will eventually become my OIM "location" element. I will also change "(blank)" to the value "false", since this means that the item is not physically available.
+
 ![UBC has, after](ubc-has-after.png "UBC has, after")
 
 Mass editing a column may also reveal inevitable occurrences of human error when manually creating spreadsheets. For instance a column with values meant to represent the map scale:
+
 ![Human error](human-error.png "Human error")   
 
 It's recommended to fix columns to correct any major instances of human error *with reasonable effort*. This column can be cleaned to fix human error and align with OIM standards:   
 ![No human error](no-human-error.png "No human error")
 
 ### Replace a term or value
-<b>Use this is you would like to change all of the occurrences of a term into something else, like changing "BC" to "British Columbia" in an entire column with other values. This is different than mass editing cell values, because this will edit a specific term within a cell, and not the entire cell value.</b>
+Use this is you would like to change all of the occurrences of a term into something else, like changing "BC" to "British Columbia" in an entire column with other values. This is different than mass editing cell values, because this will edit a specific term within a cell, and not the entire cell value.
 - Click on a column with values that need to be replaced, then select Edit cells > Transform.
 - In the new window's "Expression" box, the expression should read <b>value.replace('[term]','[replacement]')</b>. For example, if you would like to replace "NL" with "Newfoundland and Labrador", this would be the expression:
 ```
@@ -99,7 +102,7 @@ value.replace('NL','Newfoundland and Labrador')
 - Click <b>OK</b> to execute the changes.
 
 ### Add a term or value
-<b>use this if you would like to insert a term in the cell value for the entire column, like adding the term "UTM" to a column with just a value for the zone number.</b>
+Use this if you would like to insert a term in the cell value for the entire column, like adding the term "UTM" to a column with just a value for the zone number.
 - Click on a column with values that need to be replaced, then select Edit cells > Transform.
 In the new window's "Expression" box, the expression should read <b>'[term]' + '[space]' + value</b>. For example:
 ```
@@ -109,12 +112,13 @@ This expression will turn a column with only the values of UTM zones into one wi
 - Click <b>OK</b> to execute the changes.
 
 ### Concatenate / merge columns
-<b>use this if you would like to join two columns together, like two different columns with geographic location values.</b>
+Use this if you would like to join two columns together, like two different columns with geographic location values.
 - Click one column that you would like to join with another, and select Edit columns > Join columns.
 - On the left, select the second column (and any additional columns) to join.
 - For the content separator, refer to the OIM elements in case values need specific separators. For example, the <b>location</b> element requires a pipe character as a separator between values. So, for joining two columns with location values, this will need to be <code>' | '</code>.
 - Select skip nulls.
 - Select Delete joined columns.
+
 ![Join columns](join-columns.png "Join columns")
 - Click <b>OK</b> to execute changes.
 

@@ -9,11 +9,11 @@ parent: Workflows
 If a digital index map exists for a map series, and UBC Library has an inventory of their holdings on a spreadsheet, then we can connect the two using GIS. However we'll first need to make sure that the inventory spreadsheet is properly formatted.
 
 ## Identify OpenIndexMap fields in a UBC inventory
------
+
 The basic steps to complete this part:
 1. Review each column and highlight ones that apply to an OIM elements.
 2. Remove columns that are not highlighted.
------
+3. Export as a .csv.
 
 This part requires a spreadsheet application like Microsoft Excel or MacOS Numbers.
 {: .note}
@@ -59,13 +59,59 @@ As columns in the UBC inventories are identified, highlight them or make a note.
 
 Keep in mind that as the inventory columns are compared to OIM elements, there may be inconsistencies that would prevent a straightforward crosswalk. Using the example above, an OIM <b>location</b> element could be applied to both the "Prov" and "Other place" columns. For now, this isn't anything to be concerned about – the task at hand is to simply identify columns that can be converted into an OIM element. In later steps in the process, we will clean up the field names and data, including concatenating two columns if needed.
 
+Once all unused columns are deleted, the next step is to transform our columns/values to match the OIM standard.
+
+## Transform columns using OpenRefine
+
+The basic steps to complete this part:
+1. Start a new project in OpenRefine with your UBC inventory with OIM columns.
+2. Use common OpenRefine functions to transform and clean your columns.
+3. Export as a .csv.
+
+These instructions are for using [OpenRefine](https://openrefine.org/) to transform and clean your inventory.
+{: .note}
+
+Working toward having an OIM standardized inventory, the next step will transform the UBC inventory columns and values using functions in OpenRefine. Here are some common OpenRefine functions that will be useful for cleaning up inventories:
+
+### Replace a term or value
+<b>Use this is you would like to change all of the occurrences of a term into something else, like changing "BC" to "British Columbia" in an entire column.</b>
+- Click on a column with values that need to be replaced, then select Edit cells > Transform.
+- In the new window's "Expression" box, the expression should read <b>value.replace('[term]','[replacement]')</b>. For example, if you would like to replace "NL" with "Newfoundland and Labrador", this would be the expression:
+```
+value.replace('NL','Newfoundland and Labrador')
+```
+- Click <b>OK</b> to execute the changes.
+
+### Add a term or value
+<b>use this if you would like to insert a term in the cell value for the entire column, like adding the term "UTM" to a column with just a value for the zone number.</b>
+- Click on a column with values that need to be replaced, then select Edit cells > Transform.
+In the new window's "Expression" box, the expression should read <b>'[term]' + '[space]' + value</b>. For example:
+```
+'UTM' + ' ' + value
+```
+This expression will turn a column with only the values of UTM zones into one with <b>UTM 10</b>.
+- Click <b>OK</b> to execute the changes.
+
+### Concatenate / merge columns
+<b>use this if you would like to join two columns together, like two different columns with geographic location values.</b>
+- Click one column that you would like to join with another, and select Edit columns > Join columns.
+- On the left, select the second column (and any additional columns) to join.
+- For the content separator, refer to the OIM elements in case values need specific separators. For example, the <b>location</b> element requires a pipe character as a separator between values. So, for joining two columns with location values, this will need to be <code>' | '</code>.
+- Select skip nulls.
+- Select Delete joined columns.
+![Join columns](join-columns.png "Join columns")
+- Click <b>OK</b> to execute changes.
+
+### Trim leading and trailing whitespace
+
+This should be done to all columns, but at a minimum, for columns representing OIM elements 'label'
+- Click on a column with values that need to be replaced, then select Edit cells > Common transforms > Trim leading and trailing whitespace.
 
 
 
-## 3 - Remove unused fields from UBC inventory
 
-After all fields have been assessed, remove any unused fields.
 
-## 4 - Export/Save the spreadsheet as a plain text
 
-Export the spreadsheet as a plain text document, .csv is preferred.
+
+
+then export the spreadsheet as a .csv. The naming convention should be something like: [identifier]-[scale]-inventory.csv. For example, the Canadian NTS 1:250,000 scale map series inventory would be <b>nts-250k-inventory.csv</b>.

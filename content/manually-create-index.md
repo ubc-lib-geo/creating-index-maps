@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Manually create an index
-nav_order: 7
+nav_order: 8
 parent: Workflows
 ---
 

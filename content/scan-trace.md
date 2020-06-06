@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Scan and trace a paper index
-nav_order: 4
+nav_order: 5
 parent: Workflows
 ---
 

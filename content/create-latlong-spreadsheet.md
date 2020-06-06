@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Create lat/long spreadsheet
-nav_order: 6
+nav_order: 7
 parent: Workflows
 ---
 

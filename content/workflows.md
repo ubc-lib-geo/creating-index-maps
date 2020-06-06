@@ -5,7 +5,9 @@ nav_order: 3
 has_children: yes
 ---
 
-For existing digital indexes with an OpenIndexMap "label" field <b>and</b> a UBC map inventory, [clean the inventory](clean-inventory.md) to OpenIndexMap standards. Then in QGIS [create a one-to-many relationship](https://docs.qgis.org/3.10/en/docs/user_manual/working_with_vector/attribute_table.html#creating-one-or-many-to-many-relations), or join 1-to-1.
+The goal is to have a digital map index (spatial geometry + sheet ID) and a spreadsheet inventory (sheet ID and other OIM compatible info) for prioritized map series. When these two files exist, then we will link the two using the sheet ID in QGIS. 
+
+For existing digital indexes with an OpenIndexMap "label" field <b>and</b> a UBC map inventory, [clean the inventory](clean-inventory.md) to OpenIndexMap standards. Then in QGIS we'll create a virtual layer .
 
 For existing digital indexes with an OpenIndexMap "label" field, [create an inventory spreadsheet with "label" column](create-oim-spreadsheet.md).
 

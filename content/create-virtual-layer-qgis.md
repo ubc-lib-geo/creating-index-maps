@@ -47,18 +47,18 @@ You should now see something like this:
 ### Determine each layer's primary key
 We will need to link the two layers together using a common value (aka primary key, or PK). In most cases this will be the sheet's alphanumeric identifying number (example: 092G), but it may also occasionally be a sheet title. Each layer *should* contain these values.
 
-For each layer, right-click their name in the Layers Panel, and select Open Attribute Table. You should now see a table showing all of the attribute values for each feature (a row in the table). Attribute names are column headers.
+For each layer, right-click their name in the Layers Panel, and select Open Attribute Table. You should now see a table showing all of the attribute values for each feature (a row in the table). Attribute names are contained in the column headers.
 
 For each layer, find the column header that represents the layer's primary key, and make a note (a mental one, or write it down).
 
 ### Add a new virtual layer
 Now we will relate the two files together using a virtual layer. Select Layer > Create Layer > New Virtual Layer...  
 
-In the new Virtual Layer window, we will add an SQL query in the Query field. The query will need to follow the following format:
+In the new Virtual Layer window, we will add an SQL query in the Query field. The query will need to use the following format:
 ```SQL
 SELECT * FROM [layer1], [layer2] where [layer1 PK] = [layer2 PK]
 ```
-
+<br>
 For example, these layers would use the following query:
 
 | Layer name           | Column containing primary key values |
@@ -69,6 +69,12 @@ For example, these layers would use the following query:
 ```SQL
 SELECT * FROM canada250k_nts, canada250k_inventory where IDENTIF = label
 ```
+<br>
 Once you have assembled your query, select Test to identify any potential errors. If no errors, select Add and then Close. This process could take a moment or two.
 
 ![new virtual layer](img/new-virt-layer.png "new virtual layer")
+
+After your query runs, you will see a new layer in your Layers Panel named virtual_layer or something similar. Right-click that new virtual layer, and select Open Attribute Table to confirm that the inventory attributes appear.
+
+### Remove extra attributes
+You may need to remove some unnecessary fields from your new virtual layer, especially anything that is not an OIM element.

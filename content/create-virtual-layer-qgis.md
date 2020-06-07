@@ -76,5 +76,38 @@ Once you have assembled your query, select Test to identify any potential errors
 
 After your query runs, you will see a new layer in your Layers Panel named virtual_layer or something similar. Right-click that new virtual layer, and select Open Attribute Table to confirm that the inventory attributes appear.
 
-### Remove extra attributes
-You may need to remove some unnecessary fields from your new virtual layer, especially anything that is not an OIM element.
+### Export your virtual layer as a geoJSON
+Now we'll save our virtual layer as a GIS file so we can edit and reuse it. Right-click the new virtual layer, and select Export > Save Features As...
+
+In the new window we're going to configure our file-to-be. From the format drop-down, select GeoJSON.
+
+Click the "three dots" button just to the right of the File name field to navigate to the location where the file will be saved.
+
+The file name should include:
+- The country or region
+- An indication of the maps' scale (or if it varies from sheet to sheet)
+- An indication of the title of the series, such as "ams1303"
+- Anything else to make it unique (optional)
+
+At UBC Library we'll follow this general convention, using lowercase characters:
+```
+[country or region]_[scale]_[title or publisher]_[other info].geojson
+```
+
+<br>
+
+For example, the Canadian 1:250,000 scale topographic maps would be:
+```
+canada_250k_nts.geojson
+```
+<br>
+
+Back in the Save Vector Layer as window, the CRS should be EPSG:4326 - WGS 84
+
+Below the CRS selection, you can now deselect any unneeded attributes in the exported file. Deselect anything that is not OIM compatible.
+
+Be sure to select the option to add the saved file to the map if you would like to verify it exported correctly.
+
+Click OK when finished.
+
+![export file](img/export-file.png "export file")

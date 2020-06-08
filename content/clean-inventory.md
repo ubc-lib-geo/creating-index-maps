@@ -136,15 +136,8 @@ Use this if you would like to join two columns together, like two different colu
 
 ## Rename columns representing OIM elements in OpenRefine
 
-This part requires [OpenRefine](https://openrefine.org/) to rename columns.
-{: .note}
 
 Once columns are cleaned, they are ready to be renamed as OIM elements. If there are any columns that are not ready for an OIM name, continue transforming in OpenRefine.
 
 
-
-
-
-
-
-then export the spreadsheet as a .csv. The naming convention should be something like: [identifier]-[scale]-inventory.csv. For example, the Canadian NTS 1:250,000 scale map series inventory would be <b>nts-250k-inventory.csv</b>.
+When ready, export the spreadsheet as a .csv. The naming convention should be something like: [region]_[scale]_[identifier]_inventory.csv. For example, the Canadian NTS 1:250,000 scale map series inventory would be <b>canada_250k_nts_inventory.csv</b>.

@@ -25,6 +25,7 @@ This part requires use and some knowledge of [QGIS v3.10](https://qgis.org/en/si
 ### Open QGIS and start a new projection
 
 Start QGIS, then open a new project. Either select a new project template on opening QGIS, or Project > New.
+
 ![start a new project](img/start-new-proj.png "start a new project")
 
 ### Open a digital map index file

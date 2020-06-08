@@ -9,7 +9,7 @@ Once both an OIM compatible spreadsheet and a digital map index exist, we will j
 
 Because spreadsheets likely contain many rows for one single index grid section (sometimes individual map sheets had many editions!), we will need to treat this 'join' as a 1-to-many relationship. In other words, each grid section on the digital map index will need to be connected with many spreadsheet rows. Ideally, the complete OIM digital map index will have "stacked" grid sections - one for each existing map edition - so that eventually we can programmatically query values from each stacked feature.
 
-Below is a map of Canada represented by semi-transparent grid sections, with darker colours illustrating where more grid sections are stacked. In those darker areas, more editions of the Canadian 1:250k NTS maps were printed and are available in Koerner Library.
+Below is a map of Canada represented by semi-transparent grid sections, with darker colours illustrating where more grid sections are stacked. In those darker areas, more editions of the Canadian 1:250k NTS maps were printed and are available in Koerner Library. With data like this, we can begin to create or use existing applications that allow us to identify all material pertaining to a particular location.
 ![250k stacked](stacked250k.png "250k stacked")
 
 To do this, we will [use QGIS to create a virtual layer](https://docs.qgis.org/3.10/en/docs/user_manual/managing_data_source/create_layers.html#creating-virtual-layers).

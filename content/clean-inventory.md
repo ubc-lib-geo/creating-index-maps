@@ -142,7 +142,7 @@ Occasionally you'll need to split a column into multiple. For instance, if there
 - De-select <b>Guess cell type</b>.
 - Select <b>Remove this column</b>.
 
-![split column](split-column.png "split column")
+![split column](img/split-column.png "split column")
 
 - Click <b>OK</b> to execute changes.
 

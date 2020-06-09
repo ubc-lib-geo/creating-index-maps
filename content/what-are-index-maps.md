@@ -20,7 +20,7 @@ Index maps have been an important finding aid for map collections in libraries f
 Over time libraries, started using spatial technologies to extend discoverability of map collections. For instance, [GeoBlacklight](https://geoblacklight.org/) is a discovery interface for maps and geospatial data, which uses lat/long coordinates in a map's descriptive metadata to reveal relevant resources when a user zooms a map to a particular location.
 
 As map collections move online, the importance of index maps is even more apparent as disparate images of maps, often inadequately linked to adjacent sheets or the collection as a whole, are further removed from their counterparts in a digital space. For map sheets in a map series with a large scale - lots of detail, but few familiar geographic feature for reference - it is hard to determine geographic location of the map. For example unless you were from the few blocks displayed [on this map](https://open.library.ubc.ca/collections/gvrdmaps/items/1.0134130) in Vancouver, it is difficult to know where this map is showing, or even where to look to find out.
-
+<!--
 Some stuff about Open Index Maps and GeoBlacklight
 - both for sharing holdings, and for spatial discoverability
 - without GeoBlacklight, could use Mapbox GL JS
@@ -28,7 +28,7 @@ Some stuff about Open Index Maps and GeoBlacklight
 Highlight the work of librarians who've made advances here
 
 Goal for UBC, how do we do that?
-
+-->
 ## More information
 
 - [Chris Thiry's Clearinghouse](https://www.arcgis.com/home/group.html?id=427f021a56f9449dbba24fbb4b915f55)

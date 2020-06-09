@@ -17,3 +17,4 @@ We are extending previous work done at UBC to create 'inventories' of large pape
 With standardized, digital map indexes, we can begin to build applications to help us make our paper collections more discoverable through discovery interfaces like GeoBlacklight (see: Geodisy).
 
 Below is an example web map listing all available map sheets for a particular location in Southern BC.
+<iframe src="/content/available-092g.html" frameborder="0" allowfullscreen="true"> </iframe>

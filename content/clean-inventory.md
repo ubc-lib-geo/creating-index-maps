@@ -122,17 +122,29 @@ In the new window's "Expression" box, the expression should read <b>'[term]' + '
 This expression will turn a column with only the values of UTM zones into one with <b>UTM 10</b>. Notice the "space" between the middle single-quotes, which will split the two terms rather than having them as one.
 - Click <b>OK</b> to execute the changes.
 
-### Concatenate / merge columns
+### Join columns
 Use this if you would like to join two columns together, like two different columns with geographic location values.
 - Click one column that you would like to join with another, and select Edit columns > Join columns.
 - On the left, select the second column (and any additional columns) to join.
 - For the content separator, refer to the OIM elements in case values need specific separators. For example, the <b>location</b> element requires a pipe character as a separator between values. So, for joining two columns with location values, this will need to be <code>' | '</code>.
-- Select skip nulls.
-- Select Delete joined columns.
+- Select skip nulls. This will keep 'separators' from appearing when there is no joined value.
+- Select <b>Delete joined columns</b> to delete the column that is being joined.
 
 ![Join columns](join-columns.png "Join columns")
 - Click <b>OK</b> to execute changes.
 
+### Split a column based on the number of characters
+Occasionally you'll need to split a column into multiple. For instance, if there are multiple sheet names listed and you'd like to separate them into "label" and "labelAlt", you can use this method.
+
+- Click one column that you would like to split, and select <b>Edit column > Split into several columns...</b>.
+- Select "by field length".
+- We will need to enter an integer for the characters in this column with which to create each new field. If we have one column with a cell value <code>x092B11w/B12e</code> that we want to become 3 columns <code>x</code>, <code>092B11</code>, and <code>w/B12e</code>, then we will enter the field lengths 1,6,6. However, since we may not always know the length of the final column, we can enter a third character length of 20 to be sure we capture all of remaining 'labelAlt' text.
+- De-select <b>Guess cell type</b>.
+- Select <b>Remove this column</b>.
+
+![split column](create-column.png "split column")
+
+- Click <b>OK</b> to execute changes.
 
 ## Rename columns representing OIM elements in OpenRefine
 

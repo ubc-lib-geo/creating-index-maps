@@ -52,7 +52,8 @@ Let's take a quick look at the attribute table, by **right-clicking the layer's 
 Snapping allows us to create polygons exactly next to one another without any gaps between them, just as the map sheets represent. In the Snapping Toolbar, click the magnet to enable the snapping options. Be sure to set the configurations to these setting:
 - Set for **All Layers**
 - Snap on **Vertex and Segment**
-The remaining settings can be left at the default. Your setting should look something like this:
+The remaining settings can be left at the default. Your setting should look something like this:    
+
 ![snapping toolbar](img/snapping-toolbar.png "snapping toolbar")
 
 ### Open Edit Session
@@ -69,10 +70,18 @@ For each box on the scanned paper index, we will create a new feature in our emp
 
 ![shape digitizing toolbar](img/s-d-t.png "shape digitizing toolbar")
 
-2. Select a corner of one of the boxes on the scanned paper map, and **drag to the opposite corner**. When you create a box that is the same shape and size as the box on the paper, **right-click** your mouse.    
+2. With your mouse, click a corner of one of the boxes on the scanned paper map, and **drag to the opposite corner**. When you create a box that is the same shape and size as the box on the paper, **right-click** your mouse.    
 
 ![click and drag](img/click-drag.gif "click and drag shape")
 
 3. After right-clicking, a window will appear prompting you to enter values for the each attribute field. In this case, we just have 'label' (but there could be others to enter here too, depending on the assignment). Enter the 'label' exactly as shown. Click OK and you should see your first polygon.    
 
-![shape digitizing toolbar](img/s-d-t.png "shape digitizing toolbar")
+![first polygon](img/first-poly.png "first polygon")
+
+4. Navigate to your next polygon location by holding the spacebar and moving your cursor.    
+If you'd like to make your new layer translucent to better see features on the paper map layer, right-click your layer and select Properties > Symbology.
+{: .note}
+
+5. The remaining polygons should ideally be exactly next to one another, so we will use the snapping rules we set up earlier. To create your next polygon, start on a segment edge of one you created previously. With snapping enabled, move your cursor next to the polygon edge, and a little pink marker will snap directly to it. Once on the segment, click and drag to create your next polygon and add your attribute values. Repeat this step for the remaining polygons.     
+
+![snapping to polygon](img/snap.gif "snapping to polygon")

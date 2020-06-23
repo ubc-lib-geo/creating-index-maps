@@ -66,23 +66,23 @@ Now let's begin editing the empty layer by adding features.
 
 For each box on the scanned paper index, we will create a new feature in our empty layer. One-by-one this will become a digital index, which we will eventually export to be joined with more tabular data about each map sheet. Before starting, make sure that you're in an edit mode for the empty layer, and that you have enabled the Shape Digitizing Toolbar.
 
-1. In the **Shape Digitizing Toolbar**, select **Add Rectangle from Extent**. This will turn your cursor into a crosshair, which means QGIS is waiting for you to select your first point of the rectangle.    
+In the **Shape Digitizing Toolbar**, select **Add Rectangle from Extent**. This will turn your cursor into a crosshair, which means QGIS is waiting for you to select your first point of the rectangle.    
 
 ![shape digitizing toolbar](img/s-d-t.png "shape digitizing toolbar")
 
-2. With your mouse, click a corner of one of the boxes on the scanned paper map, and **drag to the opposite corner**. When you create a box that is the same shape and size as the box on the paper, **right-click** your mouse.    
+With your mouse, click a corner of one of the boxes on the scanned paper map, and **drag to the opposite corner**. When you create a box that is the same shape and size as the box on the paper, **right-click** your mouse.    
 
 ![click and drag](img/click-drag.gif "click and drag shape")
 
-3. After right-clicking, a window will appear prompting you to enter values for the each attribute field. In this case, we just have 'label' (but there could be others to enter here too, depending on the assignment). Enter the 'label' exactly as shown. Click OK and you should see your first polygon.    
+After right-clicking, a window will appear prompting you to enter values for the each attribute field. In this case, we just have 'label' (but there could be others to enter here too, depending on the assignment). Enter the 'label' exactly as shown. Click OK and you should see your first polygon.    
 
 ![first polygon](img/first-poly.png "first polygon")
 
-4. Navigate to your next polygon location by holding the spacebar and moving your cursor.    
+Navigate to your next polygon location by holding the spacebar and moving your cursor.    
 If you'd like to make your new layer translucent to better see features on the paper map layer, right-click your layer and select Properties > Symbology.
 {: .note}
 
-5. The remaining polygons should ideally be exactly next to one another, so we will use the snapping rules we set up earlier. To create your next polygon, start on a segment edge of one you created previously. With snapping enabled, move your cursor next to the polygon edge, and a little pink marker will snap directly to it. Once on the segment, click and drag to create your next polygon and add your attribute values. Repeat this step for the remaining polygons.     
+The remaining polygons should ideally be exactly next to one another, so we will use the snapping rules we set up earlier. To create your next polygon, start on a segment edge of one you created previously. With snapping enabled, move your cursor next to the polygon edge, and a little pink marker will snap directly to it. Once on the segment, click and drag to create your next polygon and add your attribute values. Repeat this step for the remaining polygons.     
 
 ![snapping to polygon](img/snap.gif "snapping to polygon")
 
@@ -92,13 +92,13 @@ You may encounter some irregularly shaped maps which will need more than just a 
 
 ![irregular map](img/irregular-map.png "irregular map")
 
-1. Create two (or more) polygons for each rectangle making up the polygon using the steps above. When prompted to add attribute values, you don't need to add anything – we'll do that in the next step.
+Create two (or more) polygons for each rectangle making up the polygon using the steps above. When prompted to add attribute values, you don't need to add anything – we'll do that in the next step.
 
-2. Using the Select Feature(s) tool, select all of the polygons to be merged to that they are highlighted. To select more than one feature, click and drag across them, or hold the Shift key.    
+Using the Select Feature(s) tool, select all of the polygons to be merged to that they are highlighted. To select more than one feature, click and drag across them, or hold the Shift key.    
 
 ![select features tool](img/select-tool.png "select features tool")
 
-3. With the features selected, from the main menu, click Edit > Merge Selected Features. This will bring up a new window where you can enter attribute value for the merged object (in the "Merge" row). Enter the value, and click OK.   
+With the features selected, from the main menu, click Edit > Merge Selected Features. This will bring up a new window where you can enter attribute value for the merged object (in the "Merge" row). Enter the value, and click OK.   
 
 ![merged attributes](img/merged-attributes.png "merged attributes")
 
@@ -108,12 +108,13 @@ Once finished or when you need and break and want to come back, you can save you
 
 - **Save Edits**: This can be done incrementally while working on the project, similar to saving a Word doc or other file. Next to the Toggle Editing button, click in the **Save Layer Edits** button. When you are finished with an editing session, click the Toggle Editing button.
 
-- **Export Features**: Once you're finished making the new layer of polygons, you can export this as a new file. To do this, right-click the layer's name in the Layers Panel, and select Export > Save Features As...
-
-- In this dialog:
+- **Export Features**: Once you're finished making the new layer of polygons, you can export this as a new file. To do this, right-click the layer's name in the Layers Panel, and select Export > Save Features As...   
+In this dialog:
     - Format = GeoJSON
     - Filename = [country or region]_[scale]_[title or publisher]_[other info].geojson
     - CRS = EPSG:4326
   Click ok to save    
 
 ![export-features](img/export-features.png "export features")
+
+- **Save Project**: This will let you close QGIS and come back to your project where you left off. You should do this only after you've saved your edits and exported/saved the features. In the main menu, click Project > Save.

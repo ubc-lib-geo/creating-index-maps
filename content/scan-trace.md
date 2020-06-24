@@ -79,13 +79,13 @@ You may encounter some irregularly shaped maps which will need more than just a 
 
 ![irregular map](img/irregular-map.png "irregular map")
 
-Create two (or more) polygons for each rectangle making up the polygon using the steps above. When prompted to add attribute values, you don't need to add anything – we'll do that in the next step.
+Create two (or more) polygons for each rectangle making up the polygon using the steps above. When prompted to add attribute values, **add the attribute value for only one of the features**.
 
 Using the Select Feature(s) tool, select all of the polygons to be merged to that they are highlighted. To select more than one feature, click and drag across them, or hold the Shift key.    
 
 ![select features tool](img/select-tool.png "select features tool")
 
-With the features selected, from the main menu, click Edit > Merge Selected Features. This will bring up a new window where you can enter attribute value for the merged object (in the "Merge" row). Enter the value, and click OK.   
+With the features selected, from the main menu, click Edit > Merge Selected Features. This will bring up a new window where you can specifiy the attribute value for the resulting merged feature. Click to highlight the row with the correct attribute value, then click the option to take attributes from selected feature.    
 
 ![merged attributes](img/merged-attributes.png "merged attributes")
 

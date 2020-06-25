@@ -138,7 +138,7 @@ Occasionally you'll need to split a column into multiple. For instance, if there
 
 - Click one column that you would like to split, and select <b>Edit column > Split into several columns...</b>.
 - Select "by field length".
-- We will need to enter an integer for the characters in this column with which to create each new field. If we have one column with a cell value <code>x092B11w/B12e</code> that we want to become 3 columns <code>x</code>, <code>092B11</code>, and <code>w/B12e</code>, then we will enter the field lengths 1,6,6. However, since we may not always know the length of the final column, we can enter a third character length of 20 to be sure we capture all of remaining 'labelAlt' text.
+- We will need to enter an integer for the characters in this column with which to create each new field. If we have one column with a cell value <code>x092B11w/B12e</code> that we want to become 2 columns <code>x092B11</code> and <code>w/B12e</code>, then we will enter the field lengths 7,6. However, since we may not always know the length of the final column, we can enter a second character length of 20 to be sure we capture all of remaining 'labelAlt' text.
 - De-select <b>Guess cell type</b>.
 - Select <b>Remove this column</b>.
 

@@ -52,6 +52,11 @@ For each layer, right-click their name in the Layers Panel, and select Open Attr
 
 For each layer, find the column header that represents the layer's primary key, and make a note (a mental one, or write it down).
 
+### Refactor primary key fields (where applicable)
+In case you determine that primary key fields are not a 1-1 match, then we can use the QGIS Refactor Fields tool to fix them. This could be used in cases where we've purposefully retained a character (like and "x" to keep fields containing "e" from converting to scientific notation), or if we've discovered something needing a quick fix after working in OpenRefine.
+
+
+
 ### Add a new virtual layer
 Now we will relate the two files together using a virtual layer. Select Layer > Create Layer > New Virtual Layer...  
 

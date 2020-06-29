@@ -86,7 +86,7 @@ Use this if you need to change a common value of a cell from one thing to anothe
 
 The window above is showing all values listed in the column, with the number of occurrences of that value in gray. In this case there are 32 occurrences of values that are nothing but whitespace. If you see this, delete any whitespace by hovering over the value and selecting <b>edit</b>. Now delete the whitespace and click <b>Apply</b>. This should remove the 32 occurrences of whitespace.
 
-- For the term that you would like to mass edit, hover the value and select <b>edit</b>, then type the term that should replace it and click <b>Apply</b>. In this example I would like any occurrence of the value "k2 sup." to be "true", since this column will eventually become my OIM "location" element. I will also change "(blank)" to the value "false", since this means that the item is not physically available.
+- For the term that you would like to mass edit, hover the value and select <b>edit</b>, then type the term that should replace it and click <b>Apply</b>. In this example I would like any occurrence of the value "k2 sup." to be "true", since this column will eventually become my OIM "available" element. I will also change "(blank)" to the value "false", since this means that the item is not physically available.
 
 ![UBC has, after](ubc-has-after.png "UBC has, after")
 

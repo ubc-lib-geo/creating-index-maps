@@ -126,7 +126,7 @@ This expression will turn a column with only the values of UTM zones into one wi
 Use this if you would like to join two columns together, like two different columns with geographic location values.
 - Click one column that you would like to join with another, and select Edit columns > Join columns.
 - On the left, select the second column (and any additional columns) to join.
-- For the content separator, refer to the OIM elements in case values need specific separators. For example, the <b>location</b> element requires a pipe character as a separator between values. So, for joining two columns with location values, this will need to be <code>' | '</code>.
+- For the content separator, refer to the OIM elements in case values need specific separators. For example, the <b>location</b> element requires a pipe character as a separator between values. So, for joining two columns with location values, this will need to be <code> | </code>.
 - Select skip nulls. This will keep 'separators' from appearing when there is no joined value.
 - Select <b>Delete joined columns</b> to delete the column that is being joined.
 

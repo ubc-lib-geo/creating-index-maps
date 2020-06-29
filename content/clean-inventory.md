@@ -117,7 +117,7 @@ Use this if you would like to insert a term in the cell value for the entire col
 - Click on a column with values that need to be replaced, then select Edit cells > Transform.
 In the new window's "Expression" box, the expression should read <b>'[term]' + '[space]' + value</b>. For example:
 ```
-'UTM' + ' ' + value
+'UTM ' + value
 ```
 This expression will turn a column with only the values of UTM zones into one with <b>UTM 10</b>. Notice the "space" between the middle single-quotes, which will split the two terms rather than having them as one.
 - Click <b>OK</b> to execute the changes.

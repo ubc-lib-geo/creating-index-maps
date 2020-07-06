@@ -16,8 +16,27 @@ The basic steps in this part are:
 We'll be using these QGIS plugins:
 - Georeferencer
 - QuickMapServices
+{: .note}
 
-**This part coming soon**
+We'll start with a scanned image of a map – one with lines of latitude and longitude labeled in the map so that adding ground control points (points on the scanned paper map and their corresponding real world locations).
+
+Open QGIS and open a new blank project. Set your project CRS to the same as (or as close as possible to) the CRS of the original scanned paper map. In this example we'll use  NAD83 / Statistics Canada Lambert.
+
+Change the project coordinate reference system
+{: .label .label-step}
+Click the Current CRS button in the bottom right of the QGIS status bar, and set to EPSG:3347.
+{: .step}    
+Your Current CRS should indicate the new CRS:
+![CRS set](crs-set.png "CRS set")
+
+Step 2
+{: .label .label-step}
+Do this other thing
+{: .step}
+
+
+
+
 ## Create a new polygon layer
 **This part coming soon**
 ## Add polygon features for each map area

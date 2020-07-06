@@ -24,9 +24,9 @@ Open QGIS and open a new blank project. Set your project CRS to the same as (or 
 
 Change the project coordinate reference system
 {: .label .label-step}
-Click the Current CRS button in the bottom right of the QGIS status bar, and set to EPSG:3347.
+Click the **Current CRS** button in the bottom right of the QGIS status bar, and set to EPSG:3347.
 {: .step}    
-Your Current CRS should indicate the new CRS:
+Your Current CRS should indicate the new CRS:    
 ![CRS set](crs-set.png "CRS set")
 
 Step 2

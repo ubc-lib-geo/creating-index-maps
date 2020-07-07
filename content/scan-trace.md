@@ -20,22 +20,60 @@ We'll be using these QGIS plugins:
 
 We'll start with a scanned image of a map – one with lines of latitude and longitude labeled in the map so that adding ground control points (points on the scanned paper map and their corresponding real world locations).
 
-Open QGIS and open a new blank project. Set your project CRS to the same as (or as close as possible to) the CRS of the original scanned paper map. In this example we'll use  NAD83 / Statistics Canada Lambert.
+Open QGIS and open a new blank project.
 
 Change the project coordinate reference system
 {: .label .label-step}
-Click the **Current CRS** button in the bottom right of the QGIS status bar, and set to EPSG:3347.
+Click the **Current CRS** button in the bottom right of the QGIS status bar, and set to EPSG:4326.
 {: .step}    
 Your Current CRS should indicate the new CRS:    
 ![CRS set](crs-set.png "CRS set")
 
-Step 2
+Now let's open the Georeferencer Plugin. This is what we'll use to add our scanned image, assign ground control points (GCPs), and tranform the image into geodata.
+
+Open the Georeferencer
 {: .label .label-step}
-Do this other thing
+In the main QGIS menu, click on **Raster > Georeferencer**. This should open a new window for the Georeferencer plugin.
 {: .step}
 
+Now let's add the scanned image of the map to the georeferencer plugin interface.
 
+Add the scanned image
+{: .label .label-step}
+Click on the Add Raster button on the top left of the georeferencer plugin interface. Navigate to your file, then select **Open**.
+{: .step}
 
+Configure your transformation settings
+{: .label .label-step}
+Click on the **Transformation Settings...** button in the georeferencer plugin interface. Configure to these settings:
+- Transformation Type: **Polynomial 2**
+- Target SRS: **EPSG:4326**
+- Output Raster: Save to file location (ideally in a project folder)
+- **Load in QGIS**
+{: .step}    
+
+![transform settings](transform.png "transform settings")
+
+Now, we are ready to begin identifying GCPs on your scanned image. Some maps will have lat/long graticule features – these make it very easy to georeference a map with QGIS's Georeferencer.
+Add ground control points
+{: .label .label-step}
+With the **Add Point** tool selected, select your first point at a lat/long intersection.
+{: .step}
+
+A new window should pop up as soon as you click on the location for your first point prompting you to add the lat/long information. Enter the information in the appropriate text fields, and then click **OK**   
+
+![add lat/long](add-latlong.png "add lat/long")
+
+The goal is to add between 6-10 GCPs for each map, with a somewhat even distribution over the area shown. Your residual error should be less than 150 as a general rule. If more for any individual point, double-check that point by toggling in on/off in your GCP panel to see if error improves.    
+
+Once you have your 6-10 confidently accurate points, you can run the transformation.
+
+Run the transformation
+{: .label .label-step}
+in the Georeferencer interface, click the green **Start Georeferencing** button (looks like a "play button").
+{: .step}
+
+Your image should appear in your new QGIS window. Verify it's situated in it's "real world" location by using a reference layer, such as a layer from the QuickMapServices plugin. 
 
 ## Create a new polygon layer
 **This part coming soon**

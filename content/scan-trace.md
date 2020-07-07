@@ -44,7 +44,8 @@ Click on the Add Raster button on the top left of the georeferencer plugin inter
 {: .step}
 
 Configure your transformation settings
-{: .label .label-step}
+{: .label .label-step}    
+
 Click on the **Transformation Settings...** button in the georeferencer plugin interface. Configure to these settings:
 - Transformation Type: **Polynomial 2**
 - Target SRS: **EPSG:4326**
@@ -54,7 +55,8 @@ Click on the **Transformation Settings...** button in the georeferencer plugin i
 
 ![transform settings](transform.png "transform settings")
 
-Now, we are ready to begin identifying GCPs on your scanned image. Some maps will have lat/long graticule features – these make it very easy to georeference a map with QGIS's Georeferencer.
+Now, we are ready to begin identifying GCPs on your scanned image. Some maps will have lat/long graticule features – these make it very easy to georeference a map with QGIS's Georeferencer.    
+
 Add ground control points
 {: .label .label-step}
 With the **Add Point** tool selected, select your first point at a lat/long intersection.
@@ -73,7 +75,7 @@ Run the transformation
 in the Georeferencer interface, click the green **Start Georeferencing** button (looks like a "play button").
 {: .step}
 
-Your image should appear in your new QGIS window. Verify it's situated in it's "real world" location by using a reference layer, such as a layer from the QuickMapServices plugin. 
+Your image should appear in your new QGIS window. Verify it's situated in it's "real world" location by using a reference layer, such as a layer from the QuickMapServices plugin.
 
 ## Create a new polygon layer
 **This part coming soon**

@@ -78,7 +78,11 @@ in the Georeferencer interface, click the green **Start Georeferencing** button 
 Your image should appear in your new QGIS window. Verify it's situated in it's "real world" location by using a reference layer, such as a layer from the QuickMapServices plugin.
 
 ## Create a new polygon layer
-**This part coming soon**
+Before beginning to trace your scanned and georeferenced map image, you will need to first create an empty scratch layer with OpenIndexMap elements as attributes. Using this layer, you'll add polygons for each sheet shown on the index.    
+
+An optional starting point is this pre-made .geoJson layer with all of the OIM elements already added:
+[Download Data](countryOrRegion_scale_titleOrPublisher_otherInfo.geojson){: .btn .btn-blue }     
+
 ## Add polygon features for each map area
 This section uses a QGIS project [available here](https://drive.google.com/file/d/18bZS1sqoM4F9SjEmoxy4i0MSdyurm5qp/view?usp=sharing) (48 MB .zip).
 

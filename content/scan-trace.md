@@ -7,7 +7,7 @@ parent: Workflows
 # Scan and Trace a Paper index
 
 The basic steps in this part are:
-- <span style="color:red">Georeference a scanned paper index with QGIS</span>
+- Georeference a scanned paper index with QGIS
 - Create a new polygon layer with a <code>'label'</code> or <code>'title'</code> field
 - Add polygon features to the new layer by tracing the scanned image
 - Export the new layer as a GIS file

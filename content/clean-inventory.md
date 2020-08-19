@@ -98,7 +98,7 @@ It's recommended to fix columns to correct any major instances of human error *w
 ![No human error](no-human-error.png "No human error")
 
 ### Replace a term or value
-Use this is you would like to change all of the occurrences of a term into something else, like changing "BC" to "British Columbia" in an entire column with other values. This is different than mass editing cell values, because this will edit a specific term within a cell, and not the entire cell value.
+Use this if you would like to change all of the occurrences of a term into something else, like changing "BC" to "British Columbia" in an entire column with other values. This is different than mass editing cell values, because this will edit a specific term within a cell, and not the entire cell value.
 - Click on a column with values that need to be replaced, then select Edit cells > Transform.
 - In the new window's "Expression" box, the expression should read <b>value.replace('[term]','[replacement]')</b>. For example, if you would like to replace "NL" with "Newfoundland", this would be the expression:
 ```

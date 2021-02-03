@@ -13,7 +13,8 @@ parent: Workflows
 .mpk files are Esri-formatted packages of data. They are essentially compressed (zipped) files containing all the data and file paths needed to open a map project directly into ArcMap or ArcGIS Pro. Instead of manually unzipping these files and looking for the data in folders, we will first open them in ArcMap, then export the index features as .geojson files. Then later we'll format the .geojson via OpenIndexMaps best practices.
 
 **Step 2** Open a blank ArcMap project, and drag the .mpk file into the blank map document. If a map index opens, move on to step 4.
-**Step 3** We'll now use ArcMap to extract the .mpk contents into new folder and open them as an uncompressed .mxd project file. Click on the ArcToolbox and select the tool **Conversions -> Package -> Extract Package**. In the new window you will be prompted to enter an input and output location. 
+
+**Step 3** We'll now use ArcMap to extract the .mpk contents into new folder and open them as an uncompressed .mxd project file. Click on the ArcToolbox and select **Data Management Tools -> Package -> Extract Package**. In the new window you will be prompted to enter an input and output location. 
 - Input Package = the .mpk file you want to extract
 - Output Folder = Home - Documents\ArcGIS
 Save your file using the same name it was downloaded as, something like **China_50k_L783**. Now you can open the map document (ctrl + o) to view the content. Choose the latest version folder of content.

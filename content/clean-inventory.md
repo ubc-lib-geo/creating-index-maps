@@ -76,11 +76,11 @@ Working toward having an OIM-standardized inventory, the next step will transfor
 ### Trim leading and trailing whitespace
 
 This should be done first to all columns.
-- Click on a column with values that need to be replaced, then select Edit cells > Common transforms > Trim leading and trailing whitespace.
+- Click on a column with values that need to be replaced, then select **Edit cells > Common transforms > Trim leading and trailing whitespace**.
 
 ### Mass edit a column
 Use this if you need to change a common value of a cell from one thing to another. For instance, if you would like to change all cells with a value "Koerner Library" to instead say "true".
-- Click on a column and select Facet > Text facet. On the left you should see:
+- Click on a column and select **Facet > Text facet**. On the left you should see:
 
 ![UBC has, before](ubc-has-before.png "UBC has, before")
 
@@ -99,7 +99,7 @@ It's recommended to fix columns to correct any major instances of human error *w
 
 ### Replace a term or value
 Use this if you would like to change all of the occurrences of a term into something else, like changing "BC" to "British Columbia" in an entire column with other values. This is different than mass editing cell values because this will edit a specific term within a cell, not the entire cell value.
-- Click on a column with values that need to be replaced, then select Edit cells > Transform.
+- Click on a column with values that need to be replaced, then select **Edit cells > Transform**.
 - In the new window's "Expression" box, the expression should read **value.replace('[term]','[replacement]')**. For example, if you would like to replace "NL" with "Newfoundland", this would be the expression:
 ```
 value.replace('NL','Newfoundland')

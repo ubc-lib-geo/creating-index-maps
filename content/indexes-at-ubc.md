@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Index maps: UBC Library
+title: Index maps at UBC Library
 nav_order: 2
 ---
 Our goal is to convert our existing paper map indexes to digital (spatial geometry + sheet ID) and create a spreadsheet inventory (sheet ID and other OpenIndexMaps-compatible info) <b>for prioritized Canadian or other important map series</b>. When this happens, we can join the two files in GIS.

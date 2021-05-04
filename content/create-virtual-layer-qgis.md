@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Create a virtual layer in QGIS
-nav_order: 1
+nav_order: 4
 parent: Workflows
 ---
 # Create a virtual layer in QGIS

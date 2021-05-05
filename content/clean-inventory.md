@@ -22,9 +22,9 @@ First, we'll need to make sure that any information contained in the inventories
 
 | Element      | Description                                      | Example(s) |
 |--------------|--------------------------------------------------|---------|
-| <b>label</b> | Alphanumeric code identifying the sheet (<b>mandatory</b>, if available).| 092G14    |
+| <b>label</b> | Alphanumeric code identifying the sheet (<b>mandatory</b>, if available) | 092G14    |
 | <b>labelAlt</b> | Alphanumeric code for the sheet that was used in previous or subsequent editions, or for when there are multiple labels| 092G14 East    |
-| <b>datePub</b> | Date the sheet was published or made available (<b>mandatory</b>, if available).| 1981-09    |
+| <b>datePub</b> | Date the sheet was published or made available (<b>mandatory</b>, if available) | 1981-09    |
 | <b>dateSurvey</b> | Date the map sheet was surveyed | 1954-03    |
 | <b>datePhoto</b> | Date the map sheet was photocorrected | 1990-07    |
 | <b>dateReprint</b> | Date the map sheet was reprinted | 1978-12    |

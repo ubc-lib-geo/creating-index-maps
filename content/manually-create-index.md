@@ -24,6 +24,17 @@ We can now clearly see three things:
 1. Our grid matches the extent (N, S, E, W) that we specified.
 2. The grid subdivides the rectangular polygons of the 1:1m index into quadrants.
 3. There are features within our new grid that are not conincident with the original (i.e., there is no counterpart within the original grid).
-Since we only want to keep features that are present in both grids, we will have to delete these non-coincident polygons. To do this, click **Select Features** from the **Attributes Toolbar**.
+Since we only want to keep features that are present in both grids, we will have to delete these non-coincident polygons. To do this, click **Select Features** from the **Selection Toolbar**. Select all of the features on our new grid layer which do not overlap with the original grid. (Click and hold to drag a box around multiple features. Press and hold 'Shift' to select multiple segments.) Once you've selected the non-overlapping features, right click on the new grid layer in the **Layers** box and select **Open Attribute Table**. You should see some features highlighted in blue. Within the attribute table, in the top-left corner, click **Toggle editing mode**, then **Delete selected features** to the right. Click **Save edits**, and minimize the attribute-table popup window.
+Your screen should now look similar to this:
+![](grid_trimmed.png)
+Now that the outline of our grid matches the original, we want to transfer the NTS labels from the features of the original grid to the corresponding features of our new grid. Do to this, we will make use of QGIS' **Join attributes by location** algorithm.
+From the **Menu Toolbar**, select **Processing > Toolbox > Vector general > Join attributes by location**.
+Within the popup window, select the following three values:
+![](join_attributes.png)
+Click **Run**, then **Close**.
+Open the attribute table for the newly-created layer to verify it contains the attributes from both layers.
+To help keep track of things, rename the new layer by right clicking on the layer and selecting **Rename Layer**. In this example, we'll rename the layer to **south_labels**.
+We now have the first portion of our label affixed to our grid's features. However, given that we subdivided the original grid's features into quadrants, we now have four features in our new grid that share the same label from the original. Our next task, then, will be to add characters to our labels, so we can uniquely identify each feature within the new grid. In this example, we will disambiguate the features by appending either 'SE', 'SW', 'NE', or 'NW' to its label, depending on its geographic position.
+First, we will select all the 'southern' features for each label.
 [Make layer permanent]
 -->

@@ -46,6 +46,7 @@ Within the **Expression Dialog** popup box, in the middle column, click **String
 ![](expression_add_S.png)
 Click **OK**, then **Run**, and **Close**. Rename the new refactored layer to something more descriptive. In our case, we'll rename in "south_labels_s".
 Repeat this process for the "northern" rows.
-Next, we will merge the "south_labels_s" and "south_labels_n" layers into a single layer.
+Next, we will merge the "south_labels_s" and "south_labels_n" layers into a single layer. From the **Processing Toolbox** sidebar, click **Vector general > Merge vector layers**. From the **Merge vector layers** popup window, in the **Input layers** field, select the two layers you'd like to merge, and click **OK**:
+![](merge_vectors_selection.png)
 [Make layer permanent]
 -->

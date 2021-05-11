@@ -34,7 +34,18 @@ Within the popup window, select the following three values:
 Click **Run**, then **Close**.
 Open the attribute table for the newly-created layer to verify it contains the attributes from both layers.
 To help keep track of things, rename the new layer by right clicking on the layer and selecting **Rename Layer**. In this example, we'll rename the layer to **south_labels**.
-We now have the first portion of our label affixed to our grid's features. However, given that we subdivided the original grid's features into quadrants, we now have four features in our new grid that share the same label from the original. Our next task, then, will be to add characters to our labels, so we can uniquely identify each feature within the new grid. In this example, we will disambiguate the features by appending either 'SE', 'SW', 'NE', or 'NW' to its label, depending on its geographic position.
-First, we will select all the 'southern' features for each label.
+We now have the first portion of our label affixed to our grid's features. However, given that we subdivided the original grid's features into quadrants, we now have four features in our new grid that share the same label from the original. Our next task, then, will be to add characters to our labels, so we can uniquely identify each feature within the new grid. In this example, we will distinguish the features by appending either 'SE', 'SW', 'NE', or 'NW' to its label, depending on its relative position.
+First, we will select all the 'southern' features for each label. To do this, from the **Attributes Toolbar**, click **Select Features**. (Make sure you have the correct layer selected--"south_labels", in our case.) Click on a feature in the bottom row of features with shared labels and drag the cursor to selct the entire row. Press and hold "Shift" to continue this action and select all of the "southern" rows in the "south_labels" layer. Your screen should now look similar to this:
+![](grid_south_rows.png)
+Open the Attribute Table for the "south_labels" layer. You should now have half of the layer's features selected--highlighted in blue--which you can verify by looking at the information included on the top ribbon. Close the Attribute Table.
+Select **Processing > Toolbox > Vector table > Refactor fields**. Input the displayed values in the following fields:
+![](refactor_fields_south.png)
+Before clicking **Run** on the **Refactor Fields** popup box, click the **Expressions** button for the "IDENTIF" field:
+![](expressions_button.png)
+Within the **Expression Dialog** popup box, in the middle column, click **String > rpad**. Follow the documentation in the right column to create an expression in the left column that looks like this:
+![](expression_add_S.png)
+Click **OK**, then **Run**, and **Close**. Rename the new refactored layer to something more descriptive. In our case, we'll rename in "south_labels_s".
+Repeat this process for the "northern" rows.
+Next, we will merge the "south_labels_s" and "south_labels_n" layers into a single layer.
 [Make layer permanent]
 -->

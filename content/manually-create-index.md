@@ -48,5 +48,20 @@ Click **OK**, then **Run**, and **Close**. Rename the new refactored layer to so
 Repeat this process for the "northern" rows.
 Next, we will merge the "south_labels_s" and "south_labels_n" layers into a single layer. From the **Processing Toolbox** sidebar, click **Vector general > Merge vector layers**. From the **Merge vector layers** popup window, in the **Input layers** field, select the two layers you'd like to merge, and click **OK**:
 ![](merge_vectors_selection.png)
+Click **Run**, then **close**. (The rest of the default settings are fine.)
+Open the Attribute Table and sort by the labels ("IDENTIF") column to verify the merge performed as expected. You should now see two features sharing the same n/s label, as opposed to four after subdividing the original grid.
+Rename the merged vector. (We will name it "south_labels_ns".)
+Repeat the previous steps, including merging layers, on the "south_labels_ns" layer for the "east" and "west" rows to derive the final layer for the "southern" portion of our Canada grid.
+Now that we have unique labels for each feature of the "southern" portion of our Canada grid, we will wrap up our project by creating another subdivided grid for the "High Arctic" portion of the original grid. To do this, simply repeat our earlier steps:
+1. Create a grid
+2. Trim excess features
+3. Transfer labels using **Join attributes by location**
+4. Create layers with "north" and "south" labels, using **Refactor fields**
+5. Merge "north" and "south" layers into a single layer
+6. Create layers with "east" and "west" labels, using the new merged "north-south" layer from the previous step
+7. Merge the "east" and "west" layers into a single "High Arctic" layer
+It's important to keep in mind, however, that the horizontal spacing will be different--8 degrees, instead of 4. (This is the reason we couldn't create a single grid to begin with.)
+![](create_grid_arctic.png)
+Once the "High Arctic" layer is complete, merge it with the "southern" layer to create the finished grid.
 [Make layer permanent]
 -->

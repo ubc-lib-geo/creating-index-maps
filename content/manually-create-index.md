@@ -4,6 +4,7 @@ title: Manually create an index
 nav_order: 8
 parent: Workflows
 ---
+## Manually creating a map index
 This tutorial uses QGIS, a free and open-source GIS software application. Interested users can download the software from [https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html).
 {: .note}
 
@@ -46,12 +47,11 @@ When you've entered the correct information, select **Run**, then **Close**. You
 
 ![](/content/img/grid_overlay_opaque.PNG)
 
-If you intend to complete this task over more than one sitting, you will need to manually save each layer you create. Otherwise, they will not be present when you reopen the project, as they are created as temporary, or "scratch", layers. (QGIS will notify you if you attempt to close a project with temporary layers.) To make a layer permanent:
-1. Right click on the layer
-2. Select **Make Permanent...**
-3. Choose the desired format and file name
-4. Click **OK**
-{: .note}
+If you intend to complete this task over more than one sitting, you will need to manually save each layer you create. Otherwise, they will not be present when you reopen the project, as they are created as temporary, or "scratch", layers. (QGIS will notify you if you attempt to close a project with temporary layers.) To make a layer permanent:{: .note}
+1. Right click on the layer{: .note}
+2. Select **Make Permanent...**{: .note}
+3. Choose the desired format and file name{: .note}
+4. Click **OK**{: .note}
 
 To make it easier to verify, we'll increase the transparency of our grid layer. Right click the newly-created grid layer within the **Layers** box and select **Properties... > Symbology**. Adjust the layer's opacity to, say, 25%. Click **Apply**, then **OK**. (You can also change the color combination of both layers for better visibility.)
 

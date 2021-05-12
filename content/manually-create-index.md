@@ -4,7 +4,7 @@ title: Manually create an index
 nav_order: 8
 parent: Workflows
 ---
-## Manually creating a map index
+# Manually creating a map index
 This tutorial uses QGIS, a free and open-source GIS software application. Interested users can download the software from [https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html).
 {: .note}
 
@@ -15,7 +15,7 @@ The Government of Canada makes available [pre-made index maps](https://open.cana
 For an introduction to the Canada NTS series, click [here](https://www.nrcan.gc.ca/earth-sciences/geography/topographic-information/maps/national-topographic-system-maps/9767). For more information on the structure of the Canada NTS index, click [here](https://www.nrcan.gc.ca/earth-sciences/geography/topographic-information/maps/9765).
 {: .note}
 
-### Import base index map to modify
+## Import base index map to modify
 Open QGIS and select **New Empty Project**.
 
 Open the location on your machine where you downloaded the original, base index map, click on the data file, and drag it into the **Layers** box in the lower left of the screen. (Note: User layout may vary.) Alternatively, you can import the layer by clicking **Open Data Source Manager** in the **Data Source Manager Toolbar**, or using the shortcut key `Ctrl+L`.
@@ -29,14 +29,14 @@ Your screen should look similar to this:
 
 ![](/content/img/index_CA_1m.PNG)
 
-### Set project CRS
+## Set project CRS
 To ensure a consistent CRS for all subsequent layers we create, we need to set the project CRS based on our layer CRS. To do this, click on the CRS icon in the bottom right of the screen.
 
 ![](/content/img/crs_button.PNG)
 
 In the popup window, select the CRS you would like to use, click **Apply**, then **OK**. The CRS icon in the bottom right of the screen should now display the selected project CRS.
 
-### Create grid
+## Create grid
 Next, we will create and overlay a spatial grid which subdivides each rectangular-polygon feature of the original, base layer into quarters. In order to run the algorithm, we must first determine (1) the extent of the geographic area of interest and (2) the horizontal and vertical spacing between the boundaries of features. For our example, the geographic extent of Canada ranges from -48 to -144 degrees longitude and 40 to 88 degrees north latitude. While the vertical spacing will remain the same, at 2 degrees latitude, as a result of Canada's far-northern extent, its horizontal spacing changes from 4 degrees longitude to 8 in the High Arctic (80 to 88 degrees north). This means we will have to create two grids--one from 40 to 80 degrees latitude, the other from 80 to 88--and merge them.
 
 First, we'll create the "southern" grid. From the **Menu Toolbar**, select **Processing > Toolbox > Vector creation > Create grid***. The values you input should look like this:
@@ -47,11 +47,11 @@ When you've entered the correct information, select **Run**, then **Close**. You
 
 ![](/content/img/grid_overlay_opaque.PNG)
 
-If you intend to complete this task over more than one sitting, you will need to manually save each layer you create. Otherwise, they will not be present when you reopen the project, as they are created as temporary, or "scratch", layers. (QGIS will notify you if you attempt to close a project with temporary layers.) To make a layer permanent:{: .note}
-1. Right click on the layer{: .note}
-2. Select **Make Permanent...**{: .note}
-3. Choose the desired format and file name{: .note}
-4. Click **OK**{: .note}
+> If you intend to complete this task over more than one sitting, you will need to manually save each layer you create. Otherwise, they will not be present when you reopen the project, as they are created as temporary, or "scratch", layers. (QGIS will notify you if you attempt to close a project with temporary layers.) To make a layer permanent:
+> 1. Right click on the layer
+> 2. Select **Make Permanent...**
+> 3. Choose the desired format and file name
+> 4. Click **OK**
 
 To make it easier to verify, we'll increase the transparency of our grid layer. Right click the newly-created grid layer within the **Layers** box and select **Properties... > Symbology**. Adjust the layer's opacity to, say, 25%. Click **Apply**, then **OK**. (You can also change the color combination of both layers for better visibility.)
 
@@ -114,7 +114,7 @@ Rename the merged vector. (We will name it "south_labels_ns".)
 
 Repeat the previous steps, including merging layers, on the "south_labels_ns" layer for the "east" and "west" rows to derive the final layer for the "southern" portion of our Canada grid.
 
-### High Arctic index
+## High Arctic index
 Now that we have unique labels for each feature of the "southern" portion of our Canada grid, we will wrap up our project by creating another subdivided grid for the "High Arctic" portion of the original grid. To do this, use the instructions above to repeat our earlier steps:
 1. Create a grid
 2. Trim excess features

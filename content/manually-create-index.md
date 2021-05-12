@@ -40,11 +40,11 @@ Next, we will create and overlay a spatial grid which subdivides each rectangula
 
 First, we'll create the "southern" grid. From the **Menu Toolbar**, select **Processing > Toolbox > Vector creation > Create grid***. The values you input should look like this:
 
-![](/content/img/create_grid_popup.png)
+![](/content/img/create_grid_popup.PNG)
 
 When you've entered the correct information, select **Run**, then **Close**. You should now see a grid covering all but Canada's High Arctic.
 
-![](/content/img/grid_overlay_opaque.png)
+![](/content/img/grid_overlay_opaque.PNG)
 
 If you intend to complete this task over more than one sitting, you will need to manually save each layer you create. Otherwise, they will not be present when you reopen the project, as they are created as temporary, or "scratch", layers. (QGIS will notify you if you attempt to close a project with temporary layers.) To make a layer permanent:
 1. Right click on the layer
@@ -55,7 +55,7 @@ If you intend to complete this task over more than one sitting, you will need to
 
 To make it easier to verify, we'll increase the transparency of our grid layer. Right click the newly-created grid layer within the **Layers** box and select **Properties... > Symbology**. Adjust the layer's opacity to, say, 25%. Click **Apply**, then **OK**. (You can also change the color combination of both layers for better visibility.)
 
-![](/content/img/grid_transparent_colorChange.png)
+![](/content/img/grid_transparent_colorChange.PNG)
 
 We can now clearly see three things:
 1. Our grid matches the extent (N, S, E, W) that we specified.
@@ -78,21 +78,21 @@ We now have the first portion of our label affixed to our grid's features. Howev
 
 First, we will select all the south features for each label. To do this, click **Select Features** from the **Attributes Toolbar**. (Make sure you have the correct layer selected--"south_labels", in our case.) Click on a feature in the bottom row of features with a shared label and drag the cursor to select the entire row across the grid. Press and hold `Shift` to continue this action and select all of the south rows in the "south_labels" layer. Your screen should look similar to this:
 
-![](/content/img/grid_south_rows.png)
+![](/content/img/grid_south_rows.PNG)
 
 Open the Attribute Table for the "south_labels" layer. You should now have half of the layer's features selected--highlighted in blue--which you can verify by looking at the information on the top ribbon of the screen. Close the Attribute Table.
 
 Select **Processing > Toolbox > Vector table > Refactor fields**. Input the displayed values in the following fields:
 
-![](/content/img/refactor_fields_south.png)
+![](/content/img/refactor_fields_south.PNG)
 
 Before clicking **Run** on the **Refactor Fields** popup window, click the **Expressions** button for the "IDENTIF" field (the labels column):
 
-![](/content/img/expressions_button.png)
+![](/content/img/expression_button.PNG)
 
 Within the **Expression Dialog** popup window, in the middle column, click **String > rpad**. Follow the documentation in the right column to create an expression in the left column that looks like this:
 
-![](/content/img/expression_add_S.png)
+![](/content/img/expression_add_S.PNG)
 
 Click **OK**, then **Run**, and **Close**.
 
@@ -102,7 +102,7 @@ Repeat this series of steps to create a layer for the north rows.
 
 After we have both our south ("south_labels_s") and north ("south_labels_n") layers, we will merge them into a single layer. Click **Processing > Toolbox > Vector general > Merge vector layers**. From the **Merge vector layers** popup window, in the **Input layers** field, select the two layers you'd like to merge, and click **OK**.
 
-![](/content/img/merge_vectors_selection.png)
+![](/content/img/merge_vectors_selection.PNG)
 
 Click **Run**, then **close**. (The rest of the default settings are fine for our purposes.)
 
@@ -126,6 +126,6 @@ Now that we have unique labels for each feature of the "southern" portion of our
 
 When creating the grid for Canada's High Arctic, it's important to keep in mind that the horizontal spacing will differ from the "southern" grid--8 degrees, instead of 4. (If you remember from earlier, this is the reason we couldn't create a single grid to begin with.)
 
-![](/content/img/create_grid_arctic.png)
+![](/content/img/create_grid_arctic.PNG)
 
 Once the "High Arctic" layer is complete, merge it with the "southern" layer to create the finished grid.

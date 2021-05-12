@@ -4,14 +4,33 @@ title: Manually create an index
 nav_order: 8
 parent: Workflows
 ---
-Information about how to manually create a non-rectilinear index is coming soon!
-<!--
+This tutorial uses QGIS, a free and open-source GIS software application. Interested users can download the software from [https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html).
+{: .note}
+
+In this section of the workflows for creating index maps, we will learn one way to manually create an index grid to facilitate spatially locating maps within a map series. Note that undertaking this task assumes there is no pre-existing grid created for the relevant series. If you have not already searched for this, it may be in your interest to do so before embarking on the following task--unless, of course, you are a GIS aficionado.
+
+The Government of Canada makes available [pre-made index maps](https://open.canada.ca/data/en/dataset/055919c2-101e-4329-bfd7-1d0c333c0e62) for the National Topographic Series (NTS) at scales of 1:1m, 1:250k, and 1:50k. However, given that numerous other NTS series exist at different scales (e.g., 1:500k, 1:125k), these pre-made indexes are hardly exhaustive. In these situations, we will need to adapt what already exists to suit our needs. In this example, we will modify the pre-existing Canada NTS 1:1m index map to create a 1:500k index.
+
+For an introduction to the Canada NTS series, click [here](https://www.nrcan.gc.ca/earth-sciences/geography/topographic-information/maps/national-topographic-system-maps/9767).
+{: .note}
+
+### Import base index map to modify
 Open QGIS and select **New Empty Project**.
-Click on the data file you want to import and drag it into the **Layers** box in the lower left of the screen.
-If applicable, select the appropriate transformation to the desired Coordinate Reference System and click **OK**.
+
+Open the location on your machine where you downloaded the original, base index map, click on the data file, and drag it into the **Layers** box in the lower left of the screen. (Note: User layout may vary.) Alternatively, you can import the layer by clicking **Open Data Source Manager** in the **Data Source Manager Toolbar**, or using the shortcut key `Ctrl+L`.
+
+Select the appropriate transformation to the desired Coordinate Reference System (CRS) and click **OK**. In this example, we will use .
+
+For an introduction to Coordinate Reference Systems, click [here](https://ubc-library-rc.github.io/map-projections/content/CRS.html).
+{: .note}
+
 Your screen should look similar to this:
-![1:1m index of Canada NTS map series](index_CA_1m.png)
-[Set layer and project CRS]
+
+![](index_CA_1m.PNG)
+
+### Set project CRS
+To ensure a consistent CRS for all layers we will create, we will 
+
 Next, we will create and overlay a spatial grid which subdivides each bounding box into quarters. In order to run the algorithm, we must first determine (1) the extent of the geographic area of interest and (2) the horizontal and vertical spacing between the boundaries of features. For our example, the geographic extent of Canada ranges from -48 to -144 degrees longitude and from 40 to 88 degrees north latitude. While the vertical spacing will remain the same, at 2 degrees latitude, as a result of Canada's far-northern extent, its horizontal spacing changes from 4 degrees longitude to 8 in the High Arctic (80 to 88 degrees north). This means we will have to create two grids--one from 40-80 deg lat, the other from 80-88--and merge them.
 First, the "southern" grid:
 From the **Menu Toolbar**, select **Processing > Toolbox > Vector creation > Create grid***. The values you input should look like this:
@@ -63,5 +82,3 @@ Now that we have unique labels for each feature of the "southern" portion of our
 It's important to keep in mind, however, that the horizontal spacing will be different--8 degrees, instead of 4. (This is the reason we couldn't create a single grid to begin with.)
 ![](create_grid_arctic.png)
 Once the "High Arctic" layer is complete, merge it with the "southern" layer to create the finished grid.
-[Make layer permanent]
--->

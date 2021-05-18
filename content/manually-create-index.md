@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Manually create an index
-nav_order: 8
+nav_order: 4
 parent: Workflows
 ---
 # Manually creating a map index

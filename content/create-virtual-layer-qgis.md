@@ -60,11 +60,11 @@ For each layer, find the column header that represents the layer's primary key, 
 In case you determine that primary key fields are not a 1-1 match, we can use the [QGIS **Refactor Fields** tool](https://docs.qgis.org/3.16/en/docs/user_manual/processing_algs/qgis/vectortable.html#refactor-fields) to fix them. This could be used in cases where we've purposefully retained a character (like an "x" to keep fields containing "e" from being converted to scientific notation), or if we've discovered something needing a quick fix after working in OpenRefine.
 
 ### Add a new virtual layer
-Now we will relate the two files together using a virtual layer. Select Layer > Create Layer > New Virtual Layer...  
+Now, we will relate the two files together using a virtual layer. Select **Layer > Create Layer > New Virtual Layer...**.  
 
-In the new Virtual Layer window, we will add an SQL query in the Query field. The query will need to use the following format:
+In the new **Virtual Layer** window, we will add a SQL query in the **Query** field. The query will need to use the following format:
 ```SQL
-SELECT * FROM [layer1], [layer2] where [layer1 PK] = [layer2 PK]
+SELECT * FROM [layer1], [layer2] WHERE [layer1 PK] = [layer2 PK]
 ```
 <br>
 For example, these layers would use the following query:
@@ -75,21 +75,21 @@ For example, these layers would use the following query:
 | canada250k_inventory | label                                |
 
 ```SQL
-SELECT * FROM canada250k_nts, canada250k_inventory where IDENTIF = label
+SELECT * FROM canada250k_nts, canada250k_inventory WHERE IDENTIF = label
 ```
 <br>
-Once you have assembled your query, select Test to identify any potential errors. If no errors, select Add and then Close. This process could take a moment or two.
+Once you have assembled your query, select **Test** to identify any potential errors. If no errors, select **Add**, then **Close**. This process could take a moment.
 
 ![new virtual layer](img/new-virt-layer.png "new virtual layer")
 
-After your query runs, you will see a new layer in your Layers Panel named virtual_layer or something similar. Right-click that new virtual layer, and select Open Attribute Table to confirm that the inventory attributes appear.
+After your query runs, you will see a new layer in your **Layers Panel** named **virtual_layer**, or something similar. Right-click that new virtual layer, and select **Open Attribute Table** to confirm the inventory attributes appear.
 
-### Export your virtual layer as a geoJSON
-Now we'll save our virtual layer as a GIS file so we can edit and reuse it. Right-click the new virtual layer, and select Export > Save Features As...
+### Export your virtual layer as a GeoJSON
+Now, we'll save our virtual layer as a GIS file, so we can edit and reuse it. Right-click the new virtual layer, and select **Export > Save Features As...**.
 
-In the new window we're going to configure our file-to-be. From the format drop-down, select GeoJSON.
+In the new window, we're going to configure our file-to-be. From the format drop-down, select **GeoJSON**.
 
-Click the "three dots" button just to the right of the File name field to navigate to the location where the file will be saved.
+Click the "three dots" button just to the right of the **File name** field to navigate to the location where the file will be saved.
 
 The file name should include:
 - The country or region
@@ -97,25 +97,22 @@ The file name should include:
 - An indication of the title of the series, such as "ams1303"
 - Anything else to make it unique (optional)
 
-At UBC Library we'll follow this general convention, using lowercase characters:
+At UBC Library, we'll follow this general convention, using lowercase characters:
 ```
 [country or region]_[scale]_[title or publisher]_[other info].geojson
 ```
-
 <br>
-
-For example, the Canadian 1:250,000 scale topographic maps would be:
+For example, the Canadian 1:250,000-scale topographic maps would be:
 ```
 canada_250k_nts.geojson
 ```
 <br>
+Back in the **Save Vector Layer as...** window, the **CRS** should be EPSG:4326 - WGS 84.
 
-Back in the Save Vector Layer as window, the CRS should be EPSG:4326 - WGS 84
+Below the **CRS** selection, you can now deselect any unneeded attributes in the exported file. Deselect anything that is not OIM compatible.
 
-Below the CRS selection, you can now deselect any unneeded attributes in the exported file. Deselect anything that is not OIM compatible.
+Be sure to select the option to add the saved file to the map, if you would like to verify it exported correctly.
 
-Be sure to select the option to add the saved file to the map if you would like to verify it exported correctly.
-
-Click OK when finished.
+Click **OK** when finished.
 
 ![export file](img/export-file.png "export file")

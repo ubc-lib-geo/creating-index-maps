@@ -24,7 +24,8 @@ Select the option to save as GeoJSON, then press **OK**.
 
 # Editing Colorado School of Mines (CSM) GeoJSON files in QGIS
 
-**Step 1:** Fire up QGIS and add one of the GeoJSONs converted from CSM.     
+**Step 1:** Fire up QGIS and add one of the GeoJSONs converted from CSM.
+
 **Step 2:** Open the **Refactor fields** tool: **Processing > Toolbox > Vector table > Refactor fields**.
 
 ### Rename existing fields

@@ -72,9 +72,9 @@ Now that the outline of our grid matches the original, we want to transfer the N
 
 Click **Run**, then **Close**. Open the Attribute Table for the newly-created layer to verify it contains the attributes from both layers.
 
-To help us mentally keep track of things, rename the new layer by right clicking on the layer and selecting **Rename Layer**. In this example, we'll rename the layer to **south_labels**. (**south** refers to the "southern" portion of the Canada grid we are creating, in contrast to the "High Arctic" portion we will create later. **labels** indicates the layer contains the labels from the original NTS layer.)
+To help us mentally keep track of things, rename the new layer by right clicking on the layer and selecting **Rename Layer**. In this example, we'll rename the layer to "south_labels". ("south" refers to the "southern" portion of the Canada grid we are creating, in contrast to the "High Arctic" portion we will create later. "labels" indicates the layer contains the labels from the original NTS layer.)
 
-We now have the first portion of our label affixed to our grid's features. However, since we subdivided the original grid's features into quadrants, we currently have four features in our new grid that share the same label from the original. Our next task, then, will be to add character strings to our labels, so we can uniquely identify each feature within the new grid. In this example, we will distinguish the features by appending either 'SE', 'SW', 'NE', or 'NW' to its label, depending on its relative position.
+We now have the first portion of our label affixed to our grid's features. However, since we subdivided the original grid's features into quadrants, we currently have four features in our new grid that share the same label from the original. Our next task, then, will be to add character strings to our labels, so we can uniquely identify each feature within the new grid. In this example, we will distinguish the features by appending either "SE", "SW", "NE", or "NW" to its label, depending on its relative position.
 
 First, we will select all the south features for each label. To do this, click **Select Features** from the **Attributes Toolbar**. (Make sure you have the correct layer selected--"south_labels", in our case.) Click on a feature in the bottom row of features with a shared label and drag the cursor to select the entire row across the grid. Press and hold `Shift` to continue this action and select all of the south rows in the "south_labels" layer. Your screen should look similar to this:
 
@@ -96,7 +96,7 @@ Within the **Expression Dialog** popup window, in the middle column, click **Str
 
 Click **OK**, then **Run**, and **Close**.
 
-Rename the new refactored layer to something more descriptive. In our case, we'll rename it "south_labels_s". (**s** denotes south features.)
+Rename the new refactored layer to something more descriptive. In our case, we'll rename it "south_labels_s". ("s" denotes south features.)
 
 Repeat this series of steps to create a layer for the north rows.
 

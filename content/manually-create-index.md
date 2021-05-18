@@ -27,7 +27,7 @@ For an introduction to Coordinate Reference Systems, click [here](https://ubc-li
 
 Your screen should look similar to this:
 
-![](/content/img/index_CA_1m.PNG)
+![](//content/img/index_CA_1m.PNG)
 
 ## Set project CRS
 To ensure a consistent CRS for all subsequent layers we create, we need to set the project CRS based on our layer CRS. To do this, click on the CRS icon in the bottom right of the screen.

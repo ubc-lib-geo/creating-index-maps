@@ -4,7 +4,7 @@ title: Manually create an index
 nav_order: 4
 parent: Workflows
 ---
-# Manually creating a map index
+# Manually create a map index
 This tutorial uses QGIS, a free and open-source GIS software application. Interested users can download the software from [https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html).
 {: .note}
 

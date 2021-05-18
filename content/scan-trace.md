@@ -164,7 +164,7 @@ Once finished, or when you need a break and want to come back, you can save your
 
 In this dialog:
 - Format = GeoJSON
-- Filename = [country or region]_[scale]_[title or publisher]_[other info].geojson
+- Filename = [country or region]\_[scale]\_[title or publisher]\_[other info].geojson
 - CRS = EPSG:4326
     
 Click **OK** to save.    

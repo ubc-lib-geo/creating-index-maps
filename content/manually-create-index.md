@@ -10,7 +10,7 @@ This tutorial uses QGIS, a free and open-source GIS software application. Intere
 
 In this section of the workflows for creating index maps, we will learn one way to manually create an index grid to facilitate spatially locating maps within a map series. Note that undertaking this task assumes there is no pre-existing grid created for the relevant series. If you have not already searched for this, it may be in your interest to do so before embarking on the following task--unless, of course, you are a GIS aficionado.
 
-The Government of Canada makes available [pre-made index maps](https://open.canada.ca/data/en/dataset/055919c2-101e-4329-bfd7-1d0c333c0e62) for the National Topographic Series (NTS) at scales of 1:1m, 1:250k, and 1:50k. However, given that numerous other NTS series exist at different scales (e.g., 1:500k, 1:125k), these pre-made indexes are hardly exhaustive. In these situations, we will need to adapt what already exists to suit our needs. In this example, we will modify the pre-existing Canada NTS 1:1m index map to create a 1:500k index.
+The Government of Canada makes available [pre-made index maps](https://open.canada.ca/data/en/dataset/055919c2-101e-4329-bfd7-1d0c333c0e62) for the National Topographic Series (NTS) at scales of 1:1m, 1:250k, and 1:50k. However, since various other NTS series exist at different scales (e.g., 1:500k, 1:125k), these pre-made indexes are hardly exhaustive. In these situations, we will need to adapt what already exists to suit our needs. In this example, we will modify the pre-existing Canada NTS 1:1m index map to create a 1:500k index.
 
 For an introduction to the Canada NTS series, click [here](https://www.nrcan.gc.ca/earth-sciences/geography/topographic-information/maps/national-topographic-system-maps/9767). For more information on the structure of the Canada NTS index, click [here](https://www.nrcan.gc.ca/earth-sciences/geography/topographic-information/maps/9765).
 {: .note}
@@ -18,9 +18,9 @@ For an introduction to the Canada NTS series, click [here](https://www.nrcan.gc.
 ## Import base index map to modify
 Open QGIS and select **New Empty Project**.
 
-Open the location on your machine where you downloaded the original, base index map, click on the data file, and drag it into the **Layers** box in the lower left of the screen. (Note: User layout may vary.) Alternatively, you can import the layer by clicking **Open Data Source Manager** in the **Data Source Manager Toolbar**, or using the shortcut key `Ctrl+L`.
+Open the location on your machine where you downloaded the original, base index map (in our case, the Canada NTS 1:1m index), click on the data file, and drag it into the **Layers** box in the lower left of the screen. (Note: User layout may vary.) Alternatively, you can import the layer by clicking **Open Data Source Manager** in the **Data Source Manager Toolbar**, or using the shortcut key `Ctrl+L`.
 
-Select the appropriate transformation to the desired Coordinate Reference System (CRS) and click **OK**. In this example, we will use WGS 84.
+Select the appropriate transformation to the desired Coordinate Reference System (CRS) and click **OK**. In this example, we will use 'EPSG:4326 - WGS 84'.
 
 For an introduction to Coordinate Reference Systems, click [here](https://ubc-library-rc.github.io/map-projections/content/CRS.html).
 {: .note}

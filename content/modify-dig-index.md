@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Modify an existing digital map index
-nav_order: 2
+nav_order: 5
 parent: Workflows
 ---
 # Converting MPKs to GeoJSON from Colorado School of Mines' "Clearinghouse of Indexes" for paper map sets

@@ -37,9 +37,13 @@ To ensure a consistent CRS for all subsequent layers we create, we need to set t
 In the popup window, select the CRS you would like to use, click **Apply**, then **OK**. The CRS icon in the bottom right of the screen should now display the selected project CRS.
 
 ## Create grid
-Next, we will create and overlay a spatial grid which subdivides each rectangular-polygon feature of the original, base layer into quarters. In order to run the algorithm, we must first determine (1) the extent of the geographic area of interest and (2) the horizontal and vertical spacing between the boundaries of features. For our example, the geographic extent of Canada ranges from -48 to -144 degrees longitude and 40 to 88 degrees north latitude. While the vertical spacing will remain the same, at 2 degrees latitude, as a result of Canada's far-northern extent, its horizontal spacing changes from 4 degrees longitude to 8 in the High Arctic (80 to 88 degrees north). This means we will have to create two grids--one from 40 to 80 degrees latitude, the other from 80 to 88--and merge them.
+Next, we will create and overlay a spatial grid which subdivides each rectangular-polygon feature of the original, base layer into quarters. In order to run the algorithm, we must first determine:
+1. The extent of the geographic area of interest
+2. The horizontal and vertical spacing between the boundaries of features
 
-First, we'll create the "southern" grid. From the **Menu Toolbar**, select **Processing > Toolbox > Vector creation > Create grid***. The values you input should look like this:
+For our example, the geographic extent of Canada ranges from -48 to -144 degrees longitude and 40 to 88 degrees north latitude. While the vertical spacing will remain the same, at 2 degrees latitude, as a result of Canada's far-northern extent, its horizontal spacing changes from 4 degrees longitude to 8 in the High Arctic (80 to 88 degrees north). This means we will have to create two grids--one from 40 to 80 degrees latitude, the other from 80 to 88--and merge them.
+
+First, we'll create the "southern" grid. From the **Menu Toolbar**, select **Processing > Toolbox > Vector creation > Create grid**. The values you input should look like this:
 
 ![](/img/create_grid_popup.PNG)
 

@@ -36,13 +36,14 @@ To ensure a consistent CRS for all subsequent layers we create, we need to set t
 
 In the popup window, select the CRS you would like to use, click **Apply**, then **OK**. The CRS icon in the bottom right of the screen should now display the selected project CRS.
 
-## Create grid
+## Creating grids
 Next, we will create and overlay a spatial grid which subdivides each rectangular-polygon feature of the original, base layer into quarters. In order to run the algorithm, we must first determine:
 1. The extent of the geographic area of interest
 2. The horizontal and vertical spacing between the boundaries of features
 
 For our example, the geographic extent of Canada ranges from -48 to -144 degrees longitude and 40 to 88 degrees north latitude. While the vertical spacing will remain the same, at 2 degrees latitude, as a result of Canada's far-northern extent, its horizontal spacing changes from 4 degrees longitude to 8 in the High Arctic (80 to 88 degrees north). This means we will have to create two grids--one from 40 to 80 degrees latitude, the other from 80 to 88--and merge them.
 
+## Create "southern" grid
 First, we'll create the "southern" grid. From the **Menu Toolbar**, select **Processing > Toolbox > Vector creation > Create grid**. The values you input should look like this:
 
 ![](/img/create_grid_popup.PNG)
@@ -51,44 +52,61 @@ When you've entered the correct information, select **Run**, then **Close**. You
 
 ![](/img/grid_overlay_opaque.PNG)
 
-> If you intend to complete this task over more than one sitting, you will need to manually save each layer you create. Otherwise, they will not be present when you reopen the project, as they are created as temporary, or "scratch", layers. (QGIS will notify you if you attempt to close a project with temporary layers.) To make a layer permanent:
-> 1. Right click on the layer
+> If you intend to complete this task in more than one sitting, you will need to manually save each layer you create. Otherwise, they will not be present when you reopen the project, since they are created as temporary, or "scratch", layers. (Fortunately, QGIS will notify you if you attempt to close a project with temporary layers.) To make a layer permanent:
+> 1. Right-click on the layer
 > 2. Select **Make Permanent...**
 > 3. Choose the desired format and file name
 > 4. Click **OK**
 
-To make it easier to verify, we'll increase the transparency of our grid layer. Right click the newly-created grid layer within the **Layers** box and select **Properties... > Symbology**. Adjust the layer's opacity to, say, 25%. Click **Apply**, then **OK**. (You can also change the color combination of both layers for better visibility.)
+#### Improve visibility and verify extent
+To make it easier to verify our grid matches the extent of the original, we'll increase the transparency of our grid layer. Right-click the newly-created grid layer within the **Layers** box and select **Properties... > Symbology**. Adjust the layer's opacity to, say, 25%. Click **Apply**, then **OK**. (You can also change the color combination of both layers for better visibility.)
 
 ![](/img/grid_transparent_colorChange.PNG)
 
 We can now clearly see three things:
-1. Our grid matches the extent (N, S, E, W) that we specified.
-2. The grid subdivides the rectangular polygons of the 1:1m index into quadrants.
-3. There are features in our new grid that are not present in the original. (This is the result of the **Create grid** algorithm, which creates a rectangular grid that matches the input grid's maximum N-S and E-W extent.)
+1. Our grid matches the extent (N, S, E, W) we specified.
+2. The grid subdivides the rectangular polygons of the 1:1m index into quarters.
+3. There are features in our new grid that are not present in the original. (This is the result of the **Create grid** algorithm, which creates a *rectangular* grid that matches the input grid's maximum N-S and E-W extent.)
 
-Since we only want to keep features that are present in both grids, we will have to delete those in the new grid which are not present in the old. To do this, click **Select Features** from the **Selection Toolbar**. Select all of the features on the new grid layer which do not overlap with the original. (Hold down the left-click button and drag the cursor over multiple features to select them. Press and hold the `Shift` key to select multiple segments.) Once you've selected the non-overlapping features, right click on the new grid layer in the **Layers** box and select **Open Attribute Table**. You should see some features highlighted in blue. Within the Attribute Table, in the top-left corner, click **Toggle editing mode**, then **Delete selected features** to the right. Click **Save edits**, **Toggle editing mode**, and close the Attribute-table popup window. Your screen should now look similar to this:
+#### Trim excess features
+Since we only want to keep features that are present in both grids, we will have to remove those in the new grid which are not present in the old. To do this, click **Select Features** from the **Selection Toolbar**.
+
+In the event you need to add a toolbar to your screen, select **View > Toolbars** and toggle on the desired one.
+{: .note}
+
+Select all the features on the new grid layer which do not overlap with the original. (Hold down the left-click button and drag the cursor over multiple features to select them. Press and hold the `Shift` key to select multiple segments.)
+
+Once you've selected the non-overlapping features, right-click on the new grid layer in the **Layers** box and select **Open Attribute Table**. You should see some features highlighted in blue. Within the Attribute Table, in the top-left corner, click **Toggle editing mode**, then **Delete selected features** to the right. Click **Save edits**, **Toggle editing mode**, and close the Attribute-table popup window. Your screen should now look similar to this:
 
 ![](/img/grid_trimmed.png)
 
+#### Rename layers
+To help us mentally keep track of things as layers proliferate, rename the new layer by right-clicking on it in the **Layers** box and selecting **Rename Layer**. We will call it 'south', in reference to the 'southern' portion of the Canada grid we are creating, to contrast it with the 'High Arctic' portion we will create later. For added clarity, we will also rename the original layer to 'original'.
+
+## From mere grid to mighty index: adding labels
 Now that the outline of our grid matches the original, we want to transfer the NTS labels from the features of the original grid to the corresponding features of our new grid. To do this, we will make use of QGIS' **Join attributes by location** algorithm. From the **Menu Toolbar**, select **Processing > Toolbox > Vector general > Join attributes by location**. Within the popup window, select the following three values:
 
 ![](/img/join_attributes.png)
 
 Click **Run**, then **Close**. Open the Attribute Table for the newly-created layer to verify it contains the attributes from both layers.
 
-To help us mentally keep track of things, rename the new layer by right clicking on the layer and selecting **Rename Layer**. In this example, we'll rename the layer to "south_labels". ("south" refers to the "southern" portion of the Canada grid we are creating, in contrast to the "High Arctic" portion we will create later. "labels" indicates the layer contains the labels from the original NTS layer.)
+Rename the layer to 'south_labels'. ('labels' indicates the layer contains the labels from the original NTS layer.)
 
-We now have the first portion of our label affixed to our grid's features. However, since we subdivided the original grid's features into quadrants, we currently have four features in our new grid that share the same label from the original. Our next task, then, will be to add character strings to our labels, so we can uniquely identify each feature within the new grid. In this example, we will distinguish the features by appending either "SE", "SW", "NE", or "NW" to its label, depending on its relative position.
+#### Making each feature's label unique
+We now have the first portion of our label affixed to our grid's features. However, since we subdivided the original grid's features into quarters, we currently have four features in our new grid that share the same label from the original. Our next task, then, will be to add character strings to our labels, so we can uniquely identify each feature within the new grid. In this example, we will distinguish the features by appending either 'SE', 'SW', 'NE', or 'NW' to its label, depending on its relative position.
 
-First, we will select all the south features for each label. To do this, click **Select Features** from the **Attributes Toolbar**. (Make sure you have the correct layer selected--"south_labels", in our case.) Click on a feature in the bottom row of features with a shared label and drag the cursor to select the entire row across the grid. Press and hold `Shift` to continue this action and select all of the south rows in the "south_labels" layer. Your screen should look similar to this:
+First, we will select all the south features for each label. To do this, click **Select Features** from the **Attributes Toolbar**. (Make sure you have the correct layer selected--"south_labels", in our case.) Click on a feature in the bottom row of features with a shared label and drag the cursor to select the entire row across the grid. Press and hold `Shift` to continue this action, and select all of the south rows in the 'south_labels' layer. Your screen should look similar to this:
 
 ![](/img/grid_south_rows.PNG)
 
-Open the Attribute Table for the "south_labels" layer. You should now have half of the layer's features selected--highlighted in blue--which you can verify by looking at the information on the top ribbon of the screen. Close the Attribute Table.
+Open the Attribute Table for the 'south_labels' layer. You should now have half of the layer's features selected--highlighted in blue--which you can verify by looking at the information on the top ribbon of the screen. Close the Attribute Table.
 
 Select **Processing > Toolbox > Vector table > Refactor fields**. Input the displayed values in the following fields:
 
 ![](/img/refactor_fields_south.PNG)
+
+Make sure to click the **Selected features only** box. Failure to do so will add the 'S' character to *every* feature in the layer, rather than just the south features.
+{: .note}
 
 Before clicking **Run** on the **Refactor Fields** popup window, click the **Expressions** button for the "IDENTIF" field (the labels column):
 
@@ -100,36 +118,41 @@ Within the **Expression Dialog** popup window, in the middle column, click **Str
 
 Click **OK**, then **Run**, and **Close**.
 
-Rename the new refactored layer to something more descriptive. In our case, we'll rename it "south_labels_s". ("s" denotes south features.)
+Rename the new refactored layer to something more descriptive. In our case, we'll call it 'south_labels_s'. (The 's' denotes south features.)
 
 Repeat this series of steps to create a layer for the north rows.
 
-After we have both our south ("south_labels_s") and north ("south_labels_n") layers, we will merge them into a single layer. Click **Processing > Toolbox > Vector general > Merge vector layers**. From the **Merge vector layers** popup window, in the **Input layers** field, select the two layers you'd like to merge, and click **OK**.
+#### Merge layers
+After we have both our south ('south_labels_s') and north ('south_labels_n') layers, we will merge them into a single layer. Click **Processing > Toolbox > Vector general > Merge vector layers**. From the **Merge vector layers** popup window, in the **Input layers** field, select the two layers you'd like to merge, and click **OK**.
 
 ![](/img/merge_vectors_selection.PNG)
 
-Click **Run**, then **close**. (The rest of the default settings are fine for our purposes.)
+Click **Run**, then **Close**. (The rest of the default settings are fine for our purposes.)
 
-Open the Attribute Table and sort by the labels ("IDENTIF") column to verify the merge performed as expected. You should see two features sharing the same N/S label, as opposed to four after subdividing the original grid.
+Open the Attribute Table and sort by the labels ('IDENTIF') column to verify the merge performed as expected. You should see two features sharing the same N/S label, as opposed to four after subdividing the original grid.
 
 ![](/img/labels_ns.PNG)
 
-Rename the merged vector. (We will name it "south_labels_ns".)
+Rename the merged vector. (We'll call it 'south_labels_ns'.)
 
-Repeat the previous steps, including merging layers, on the "south_labels_ns" layer for the "east" and "west" rows to derive the final layer for the "southern" portion of our Canada grid.
+Repeat the previous steps ('Making each feature's label unique' and 'Merge layers') on the 'south_labels_ns' layer for the 'east' and 'west' rows to derive the final layer for the 'southern' portion of our Canada grid.
 
 ## High Arctic index
-Now that we have unique labels for each feature of the "southern" portion of our Canada grid, we will wrap up our project by creating another subdivided grid for the "High Arctic" portion of the original grid. To do this, use the instructions above to repeat our earlier steps:
-1. Create a grid
+Now that we have unique labels for each feature of the 'southern' portion of our Canada grid, we'll wrap up our project by creating another subdivided grid for the 'High Arctic' portion of the original grid. To do this, use the instructions above to repeat our earlier steps:
+1. Create a grid (See note below.)
 2. Trim excess features
 3. Transfer labels using **Join attributes by location**
-4. Use **Refactor fields** to create layers with "north" and "south" labels
-5. Merge "north" and "south" layers into a single layer
-6. Use this new merged "north-south" layer to create layers with "east" and "west" labels
-7. Merge the "east" and "west" layers into a single "High Arctic" layer
+4. Use **Refactor fields** to create layers with 'north' and 'south' labels
+5. Merge 'north' and 'south' layers into a single layer
+6. Use this new merged 'north-south' layer to create layers with 'east' and 'west' labels
+7. Merge the 'east' and 'west' layers into a single 'High Arctic' layer
 
-When creating the grid for Canada's High Arctic, it's important to keep in mind that the horizontal spacing will differ from the "southern" grid--8 degrees, instead of 4. (If you remember from earlier, this is the reason we couldn't create a single grid to begin with.)
+When creating the grid for Canada's High Arctic, it's important to keep in mind that the horizontal spacing will differ from the 'southern' grid--8 degrees, instead of 4. (If you remember from earlier, this is the reason we couldn't create a single grid to begin with.)
+{: .note}
 
 ![](/img/create_grid_arctic.PNG)
 
-Once the "High Arctic" layer is complete, merge it with the "southern" layer to create the finished grid.
+## Finished product
+Once the 'High Arctic' layer is complete, merge it with the 'southern' layer to create the completed index. *Don't forget* to make the layer permanent and save your project.
+
+That's it! You now have a digital map index that can be exported as a GeoJSON and associated with an OIM-compatible spreadsheet from the relevant paper-map collection. (See the 'Create a virtual layer in QGIS' lesson for more information.)

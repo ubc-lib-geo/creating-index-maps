@@ -79,7 +79,7 @@ Your image should appear in your new QGIS window. Verify it's situated in its "r
 ## Create a new polygon layer
 Before beginning to trace your scanned and georeferenced map image, you will need to first create an empty scratch layer with OpenIndexMap elements as attributes. Using this layer, you'll add polygons for each sheet shown on the index.    
 
-An optional starting point is this pre-made .geojson layer with all of the OIM elements already added (right-click, save as):     
+An optional starting point is this pre-made .geojson layer with all of the OIM elements already added:     
 
 [Download Data](countryOrRegion_scale_titleOrPublisher_otherInfo.geojson){: .btn .btn-blue }     
 

@@ -52,7 +52,7 @@ When you've entered the correct information, select **Run**, then **Close**. You
 
 ![](/img/grid_overlay_opaque.PNG)
 
-If you intend to complete this task in more than one sitting, you will need to manually save each layer you create. Otherwise, they will not be present when you reopen the project, since they are created as temporary, or "scratch", layers. (Fortunately, QGIS will notify you if you attempt to close a project with temporary layers.) To make a layer permanent:<br>1. Right-click on the layer<br>2. Select **Make Permanent...**<br>3. Choose the desired format and file name<br>4. Click **OK**
+If you intend to complete this task in more than one sitting, you will need to manually save each layer you create. Otherwise, they will not be present when you reopen the project, since they are created as temporary, or 'scratch', layers. (Fortunately, QGIS will notify you if you attempt to close a project with temporary layers.) To make a layer permanent:<br>1. Right-click on the layer<br>2. Select **Make Permanent...**<br>3. Choose the desired format and file name<br>4. Click **OK**
 {: .note}
 
 ### Improve visibility and verify extent

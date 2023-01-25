@@ -17,7 +17,7 @@ This guide assumes you have a map set where layers have coordinates in decimal d
 
 3. Following this, we must download the first and third sheets separately as **.csv** files. 
 
-4. Now, we are ready to use ArcGIS Pro. Download the project file (!!! update link- need to upload zipped folder to github) [here](https://www.nrcan.gc.ca/earth-sciences/geography/topographic-information/maps/national-topographic-system-maps/9767), and then open it.
+4. Now, we are ready to use ArcGIS Pro. Download the project file [here](/Indexing Template.zip), and then open it.
 
 5. Following the steps in the "**Polygon Creation**" notebook, the first step is running the script that imports the necessary packages. For this, you have to make sure you have identified the correct location of the project folder.
 
